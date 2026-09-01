@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>개인정보처리방침 — devpyo</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header>
+    <nav><a href="index.html">← Legal</a> · <a href="privacy-en.html">English</a></nav>
+    <h1>개인정보처리방침</h1>
+    <p class="meta">시행일: 2026년 9월 2일 · 최종 수정: 2026년 9월 2일 · 버전 1.0</p>
+  </header>
+
+  <p>
+    본 방침은 <strong>devpyo</strong>(이하 “개발자”)가 배포하는 모바일 애플리케이션(이하 “앱”)에 공통으로 적용됩니다.
+    앱별로 데이터 처리 방식이 다른 경우 <a href="#apps">부록 — 앱 목록</a>이 본 방침보다 우선합니다.
+  </p>
+
+  <div class="callout">
+    본 문서는 Apple App Store 심사, App Privacy 영양 라벨, Google AdMob UMP(동의 관리),
+    Firebase/Google Analytics 고지 관행을 참고하여 작성되었습니다. 법률 자문이 아닙니다.
+  </div>
+
+  <h2>1. 개발자 및 연락처</h2>
+  <ul>
+    <li>개발자: devpyo</li>
+    <li>이메일: <a href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com</a></li>
+    <li>GitHub: <a href="https://github.com/devpyo/" rel="noopener">https://github.com/devpyo/</a></li>
+  </ul>
+  <p>개인정보 관련 문의·열람·삭제·처리 정지 요청은 위 이메일로 연락해 주세요. 합리적인 기간 내 답변합니다.</p>
+
+  <h2>2. 적용 범위</h2>
+  <ul>
+    <li>본 방침은 개발자가 Apple App Store 등을 통해 배포하는 iOS 앱에 적용됩니다.</li>
+    <li>앱 스토어 페이지, 앱 내 설정, 제3자 SDK가 별도 방침을 제공하는 경우 해당 방침도 함께 적용될 수 있습니다.</li>
+    <li>웹사이트·마케팅 페이지를 별도로 운영하는 경우, 해당 페이지는 본 방침과 별도로 고지될 수 있습니다.</li>
+  </ul>
+
+  <h2>3. 기본 원칙 (앱 공통)</h2>
+  <p>개발자의 앱은 대체로 아래 원칙을 따릅니다. 예외는 <a href="#apps">부록</a>에 명시합니다.</p>
+  <ul>
+    <li><strong>계정 없음:</strong> 대부분의 앱은 회원가입·로그인 없이 사용합니다.</li>
+    <li><strong>온디바이스 우선:</strong> 사용자가 입력한 콘텐츠(일정·메모·설정 등)는 기본적으로 <strong>사용자 기기</strong>에 저장합니다.</li>
+    <li><strong>개발자 서버 미보관:</strong> 사용자 콘텐츠를 개발자가 운영하는 서버에 저장·조회하지 않습니다(부록에 별도 표시가 없는 한).</li>
+    <li><strong>IDFA 미사용:</strong> iOS 광고 식별자(IDFA)를 수집하지 않으며, App Tracking Transparency(ATT) 동의 창을 표시하지 않습니다.</li>
+    <li><strong>분석:</strong> Firebase Analytics(Google)를 <code>FirebaseAnalyticsWithoutAdIdSupport</code> 구성으로 사용할 수 있습니다.</li>
+    <li><strong>광고:</strong> 일부 앱은 Google AdMob 배너 광고를 표시할 수 있습니다. 전면 광고는 앱별로 다르며 부록을 참고하세요.</li>
+  </ul>
+
+  <h2>4. 수집·이용할 수 있는 정보</h2>
+  <p>앱·SDK·OS가 자동으로 생성·수집할 수 있는 정보의 유형입니다. 실제 수집 여부는 앱·버전·설정·지역에 따라 달라질 수 있습니다.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>유형</th>
+        <th>예시</th>
+        <th>수집 주체</th>
+        <th>목적</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>앱 활동 / 사용 데이터</td>
+        <td>화면 조회, 버튼 탭, 기능 사용 이벤트(예: 항목 생성·설정 변경)</td>
+        <td>Google Firebase Analytics</td>
+        <td>이용 통계, 품질 개선, 오류 패턴 파악</td>
+      </tr>
+      <tr>
+        <td>광고 데이터</td>
+        <td>광고 노출·클릭, 광고 식별자(광고 SDK 정책 범위), 기기 광고 설정</td>
+        <td>Google AdMob</td>
+        <td>배너 광고 제공, 광고 성과 측정</td>
+      </tr>
+      <tr>
+        <td>기기·앱 정보</td>
+        <td>기기 모델, OS 버전, 앱 버전, 언어·지역, 네트워크 상태</td>
+        <td>Google(Firebase·AdMob), Apple(시스템)</td>
+        <td>서비스 제공, 호환성, 통계</td>
+      </tr>
+      <tr>
+        <td>진단 데이터</td>
+        <td>크래시·성능(해당 SDK 사용 시)</td>
+        <td>Google 또는 Apple</td>
+        <td>안정성 개선</td>
+      </tr>
+      <tr>
+        <td>사용자 콘텐츠</td>
+        <td>앱에 입력한 제목·날짜·메모 등</td>
+        <td><strong>사용자 기기</strong>(및 선택적 iCloud)</td>
+        <td>앱 핵심 기능</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Firebase Analytics 사용 시 Google은 <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase 개인정보 보호</a>에 따라
+    개발자를 대신해 데이터 처리자 역할을 수행할 수 있습니다.
+    AdMob·UMP 사용 시 <a href="https://policies.google.com/privacy" rel="noopener">Google 개인정보처리방침</a> 및
+    <a href="https://support.google.com/admob/answer/6128543" rel="noopener">AdMob 고지</a>가 적용됩니다.
+  </p>
+
+  <h2>5. 수집하지 않는 정보 (공통)</h2>
+  <p>부록에 별도 표시가 없는 한, 개발자는 다음을 <strong>직접</strong> 수집하지 않습니다.</p>
+  <ul>
+    <li>실명, 이메일, 전화번호 등 계정 식별 정보(앱 내 회원 기능이 없는 경우)</li>
+    <li>연락처·사진·마이크·카메라·정밀 위치</li>
+    <li>IDFA 및 교차 앱 추적을 위한 식별자</li>
+    <li>사용자 콘텐츠의 개발자 서버 전송·보관</li>
+  </ul>
+
+  <h2>6. 저장·동기화·권한</h2>
+  <h3>6.1 기기 내 저장</h3>
+  <p>앱 데이터와 설정은 사용자 기기의 앱 샌드박스 또는 App Group에 저장될 수 있습니다.</p>
+
+  <h3>6.2 iCloud (해당 앱만)</h3>
+  <p>
+    일부 앱은 사용자가 설정에서 켠 경우 <strong>Apple iCloud Documents</strong>로 기기 간 동기화합니다.
+    이 데이터는 Apple 인프라에서 처리되며, 개발자가 직접 접근·열람하지 않습니다.
+    Apple의 처리에 관해서는 <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple 개인정보 처리방침</a>을 참고하세요.
+  </p>
+
+  <h3>6.3 위젯·App Group</h3>
+  <p>홈·잠금 화면 위젯은 App Group을 통해 기기 내 데이터만 읽을 수 있습니다.</p>
+
+  <h3>6.4 로컬 알림</h3>
+  <p>사용자가 허용한 경우, 알림은 기기에서만 예약되며 알림 내용이 개발자 서버로 전송되지 않습니다.</p>
+
+  <h3>6.5 iOS 권한</h3>
+  <p>앱은 기능에 필요한 최소 권한만 요청합니다. 거부 시 해당 기능만 제한될 수 있습니다.</p>
+
+  <h2>7. 제3자 제공·처리 위탁</h2>
+  <p>개발자는 아래 제3자 서비스를 사용할 수 있으며, 해당 서비스가 정보를 처리합니다.</p>
+  <table>
+    <thead>
+      <tr><th>제공자</th><th>서비스</th><th>역할</th><th>방침</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Google LLC</td>
+        <td>Firebase Analytics (GA4)</td>
+        <td>앱 사용 통계·이벤트 분석</td>
+        <td><a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase Privacy</a></td>
+      </tr>
+      <tr>
+        <td>Google LLC</td>
+        <td>Google AdMob · UMP</td>
+        <td>광고 표시·동의 관리(EEA 등)</td>
+        <td><a href="https://policies.google.com/privacy" rel="noopener">Google Privacy</a></td>
+      </tr>
+      <tr>
+        <td>Apple Inc.</td>
+        <td>iCloud · App Store</td>
+        <td>동기화(선택)·배포</td>
+        <td><a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple Privacy</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>개발자는 사용자 정보를 <strong>판매하지 않습니다</strong>(CCPA/CPRA “판매”에 해당하는 행위 없음).</p>
+
+  <h2>8. 광고·동의 (AdMob UMP)</h2>
+  <ul>
+    <li>광고가 포함된 앱은 Google User Messaging Platform(UMP)을 통해 EEA·영국·스위스 등 일부 지역에서 동의 또는 비개인화 광고 선택을 요청할 수 있습니다.</li>
+    <li>한국 등 해당 메시지가 표시되지 않는 지역에서는 앱 정책에 따라 광고가 제공될 수 있습니다.</li>
+    <li>앱이 IDFA를 사용하지 않더라도 AdMob은 광고 제공을 위해 제한된 기기·광고 관련 데이터를 처리할 수 있습니다.</li>
+  </ul>
+
+  <h2>9. 보유·이용 기간</h2>
+  <ul>
+    <li><strong>기기·iCloud 데이터:</strong> 사용자가 앱에서 삭제하거나 앱을 제거할 때까지, 또는 iCloud 동기화를 끌 때까지 기기·Apple 계정에 남을 수 있습니다.</li>
+    <li><strong>분석·광고 데이터:</strong> Google 각 서비스의 보존 정책을 따릅니다. Firebase Analytics 이벤트 보존은 Google Analytics 설정(기본 최대 14개월 등)에 따릅니다.</li>
+    <li><strong>문의 기록:</strong> 이메일 문의는 처리 완료 후 합리적 기간 내 삭제합니다.</li>
+  </ul>
+
+  <h2>10. 이용자 권리</h2>
+  <h3>10.1 모든 사용자</h3>
+  <ul>
+    <li>앱 데이터 삭제: 앱 내 삭제 기능 또는 앱 제거</li>
+    <li>iCloud 동기화 중지: 해당 앱 설정(제공 시)</li>
+    <li>문의: <a href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com</a></li>
+  </ul>
+
+  <h3>10.2 GDPR (EEA·영국 등)</h3>
+  <p>해당 지역 사용자는 접근·정정·삭제·처리 제한·이동·반대 권리를 가질 수 있습니다. Google 서비스에 대한 요청은 Google 정책 및 도구를 통해 처리될 수 있으며, 개발자에게 연락하시면 안내합니다.</p>
+
+  <h3>10.3 CCPA / CPRA (캘리포니아)</h3>
+  <p>캘리포니아 거주자는 알 권리·삭제 권리·판매 거부 권리(해당 시)를 가질 수 있습니다. 본 앱은 개발자가 개인정보를 판매하지 않습니다.</p>
+
+  <h3>10.4 대한민국</h3>
+  <p>개인정보의 열람·정정·삭제·처리 정지를 요청할 수 있습니다. 만 14세 미만 아동의 개인정보는 법정대리인을 통해 요청할 수 있습니다.</p>
+
+  <h2>11. 아동</h2>
+  <p>
+    개발자 앱은 일반적으로 <strong>만 13세(또는 해당 지역 법정 연령) 미만</strong>을 대상으로 하지 않으며,
+    해당 연령 미만 아동의 개인정보를 고의로 수집하지 않습니다.
+    부모·보호자가 아동 정보가 수집되었다고 판단되면 연락해 주시면 삭제에 협조합니다.
+  </p>
+
+  <h2>12. 국제 이전</h2>
+  <p>
+    Google·Apple 서비스 이용 시 정보가 미국 등 해외에서 처리·저장될 수 있습니다.
+    Google은 <a href="https://policies.google.com/privacy" rel="noopener">데이터 프라이버시 프레임워크(DPF)</a> 등 적용 가능한 이전 메커니즘을 사용합니다.
+  </p>
+
+  <h2>13. 보안</h2>
+  <p>
+    개발자는 합리적인 기술적·관리적 조치로 정보를 보호합니다.
+    인터넷·모바일 전송의 완전한 보안을 보장할 수는 없습니다.
+    민감한 정보는 앱에 입력하지 않는 것을 권장합니다.
+  </p>
+
+  <h2>14. App Store Privacy Nutrition Label (참고)</h2>
+  <p>Apple App Store Connect 제출 시, 앱별로 아래와 유사하게 기재하는 것을 권장합니다(실제 SDK·버전에 맞게 조정).</p>
+  <table>
+    <thead>
+      <tr><th>데이터 유형</th><th>수집</th><th>추적</th><th>사용자 연결</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Product Interaction</td><td>예</td><td>아니오</td><td>아니오*</td></tr>
+      <tr><td>Advertising Data</td><td>예(광고 앱)</td><td>아니오*</td><td>아니오*</td></tr>
+      <tr><td>Crash Data</td><td>해당 시</td><td>아니오</td><td>—</td></tr>
+      <tr><td>User Content</td><td>아니오†</td><td>—</td><td>—</td></tr>
+      <tr><td>Identifiers (IDFA)</td><td>아니오</td><td>—</td><td>—</td></tr>
+    </tbody>
+  </table>
+  <p class="meta">* IDFA 미사용·WithoutAdIdSupport 구성 기준. † 개발자 서버 미전송 기준.</p>
+
+  <h2>15. 방침 변경</h2>
+  <p>
+    법령·서비스·SDK 변경 시 본 페이지를 수정하고 <strong>최종 수정일</strong>을 갱신합니다.
+    중요한 변경은 앱 업데이트 설명 등으로 안내할 수 있습니다.
+    변경 후에도 앱을 계속 사용하면 변경된 방침에 동의한 것으로 볼 수 있습니다(관련 법령이 허용하는 범위).
+  </p>
+
+  <h2 id="apps">부록 — 앱 목록</h2>
+  <p>앱별 Bundle ID·기능·SDK 차이입니다. ASC·AdMob 등록 시 동일 URL(<code>/privacy.html</code>)을 쓰고, 심사 질의 시 본 부록을 참고하세요.</p>
+
+  <h3 id="dday-view">D-Day View</h3>
+  <table>
+    <tbody>
+      <tr><th>표시명</th><td>D-Day View</td></tr>
+      <tr><th>Bundle ID</th><td><code>app.valut.proj001</code></td></tr>
+      <tr><th>플랫폼</th><td>iOS 17.0+</td></tr>
+      <tr><th>기능</th><td>D-Day(기념일·목표일) 목록, 로컬·iCloud 동기화, 홈/잠금 위젯, 로컬 알림</td></tr>
+      <tr><th>회원 계정</th><td>없음</td></tr>
+      <tr><th>사용자 콘텐츠</th><td>제목·날짜 — 기기 및(선택) iCloud만, 개발자 서버 미전송</td></tr>
+      <tr><th>분석</th><td>Firebase Analytics (IDFA 없음)</td></tr>
+      <tr><th>광고</th><td>AdMob 배너(목록 하단, 항목 없을 때 미표시)</td></tr>
+      <tr><th>전면 광고</th><td>없음</td></tr>
+    </tbody>
+  </table>
+
+  <h2>16. 문의</h2>
+  <p>개인정보 관련 문의: <a href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com</a></p>
+
+  <footer>
+    <p><a href="index.html">Legal 목록</a> · <a href="privacy-en.html">Privacy Policy (English)</a></p>
+    <p>참고: <a href="https://developer.apple.com/app-store/app-privacy-details/" rel="noopener">Apple App Privacy</a>,
+    <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase Privacy</a>,
+    <a href="https://developers.google.com/admob/ios/privacy" rel="noopener">AdMob UMP</a></p>
+  </footer>
+</body>
+</html>

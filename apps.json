@@ -1,0 +1,30 @@
+{
+  "publisher": "devpyo",
+  "contact_email": "dev.pyo@gmail.com",
+  "policy_version": "2026-09-02",
+  "default_privacy_url": "https://devpyo.github.io/privacy.html",
+  "apps": [
+    {
+      "id": "dday-view",
+      "name": "D-Day View",
+      "bundle_id": "app.valut.proj001",
+      "platform": "iOS",
+      "min_os": "17.0",
+      "accounts": false,
+      "server_user_content": false,
+      "on_device_storage": true,
+      "icloud_documents": true,
+      "app_group_widgets": true,
+      "local_notifications": true,
+      "sdk": {
+        "firebase_analytics": true,
+        "firebase_analytics_ad_id": false,
+        "admob_banner": true,
+        "admob_interstitial": false,
+        "crashlytics": false,
+        "att_idfa": false
+      },
+      "anchor": "dday-view"
+    }
+  ]
+}
