@@ -15,12 +15,21 @@ if [[ "$user" != "devpyo" ]]; then
   exit 1
 fi
 
-if gh repo view devpyo/devpyo.github.io >/dev/null 2>&1; then
-  git remote remove origin 2>/dev/null || true
-  git remote add origin "https://github.com/devpyo/devpyo.github.io.git"
-  git push -u origin main
+remote_url="https://github.com/devpyo/devpyo.github.io.git"
+
+if git remote get-url origin >/dev/null 2>&1; then
+  git remote set-url origin "$remote_url"
 else
-  gh repo create devpyo.github.io --public --description "Legal pages for devpyo apps" --source=. --remote=origin --push
+  git remote add origin "$remote_url"
 fi
 
-echo "Done. Privacy URL: https://devpyo.github.io/privacy.html"
+if gh repo view devpyo/devpyo.github.io >/dev/null 2>&1; then
+  git push -u origin main
+else
+  gh repo create devpyo.github.io --public --description "Legal pages for devpyo apps"
+  git push -u origin main
+fi
+
+echo "Done."
+echo "  KO: https://devpyo.github.io/privacy-ko.html"
+echo "  EN: https://devpyo.github.io/privacy-en.html"
