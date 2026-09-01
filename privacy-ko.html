@@ -14,11 +14,12 @@
       <a href="privacy-en.html">English</a>
     </nav>
     <h1>개인정보처리방침</h1>
-    <p class="meta">시행일: 2026년 9월 2일 · 버전 1.0</p>
+    <p class="meta">시행일: 2026년 9월 2일 · 버전 1.1</p>
   </header>
 
   <p>
     본 방침은 <strong>devpyo</strong>(이하 “개발자”)가 배포하는 모바일 애플리케이션(이하 “앱”)에 공통 적용됩니다.
+    앱마다 포함 기능(SDK)이 다를 수 있으며, <strong>분석·광고가 없는 앱</strong>에는 해당 항목이 적용되지 않습니다.
   </p>
 
   <h2>1. 개발자 연락처</h2>
@@ -26,31 +27,46 @@
     <li>이메일: <a href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com</a></li>
   </ul>
 
-  <h2>2. 수집하는 정보</h2>
-  <p>개발자는 대부분의 앱에서 <strong>회원 계정을 운영하지 않으며</strong>, 사용자가 입력한 콘텐츠를 개발자 서버에 저장하지 않습니다. 다만 아래 정보는 앱·제3자 SDK를 통해 처리될 수 있습니다.</p>
+  <h2>2. 수집 항목 및 처리 목적</h2>
+  <p>
+    개발자는 대부분의 앱에서 <strong>회원 계정을 운영하지 않으며</strong>, 사용자가 입력한 콘텐츠를 개발자 서버에 저장·보관하지 않습니다.
+    <strong>분석·광고 SDK가 포함된 앱</strong>에서 아래 정보가 앱·제3자를 통해 처리될 수 있습니다.
+  </p>
 
   <table>
     <thead>
-      <tr><th>구분</th><th>내용</th><th>처리 주체</th><th>목적</th></tr>
+      <tr><th>수집 항목</th><th>내용</th><th>처리 주체</th><th>처리 목적</th></tr>
     </thead>
     <tbody>
       <tr>
         <td>이용 데이터</td>
         <td>기능 사용 이벤트(예: 항목 생성, 설정 변경)</td>
         <td>Google Firebase Analytics</td>
-        <td>통계·품질 개선</td>
+        <td>이용 통계·품질 개선</td>
       </tr>
       <tr>
         <td>광고 데이터</td>
-        <td>광고 노출·클릭, 기기 광고 관련 신호</td>
+        <td>광고 노출·클릭, 광고 관련 기기 신호</td>
         <td>Google AdMob</td>
-        <td>배너 광고 제공</td>
+        <td>배너 광고 제공·성과 측정</td>
       </tr>
       <tr>
         <td>기기 정보</td>
         <td>OS·앱 버전·언어·기기 모델</td>
         <td>Google, Apple</td>
         <td>호환성·서비스 제공</td>
+      </tr>
+      <tr>
+        <td>네트워크 정보</td>
+        <td>IP 주소(광고·SDK 운영에 필요한 범위)</td>
+        <td>Google AdMob 등</td>
+        <td>광고 제공·부정 사용 방지</td>
+      </tr>
+      <tr>
+        <td>진단·성능 데이터</td>
+        <td>SDK·광고 로드 관련 성능·오류 정보</td>
+        <td>Google</td>
+        <td>SDK 안정성·성능 개선</td>
       </tr>
       <tr>
         <td>사용자 콘텐츠</td>
@@ -61,7 +77,18 @@
     </tbody>
   </table>
 
-  <p>현재 앱은 <strong>IDFA를 사용하지 않으며</strong> iOS 추적 허용(ATT) 창을 띄우지 않습니다. Firebase Analytics는 광고 식별자 없이 동작하는 구성을 사용합니다.</p>
+  <p>
+    분석·광고가 포함된 앱은 <strong>IDFA를 사용하지 않으며</strong> iOS 추적 허용(ATT) 창을 띄우지 않습니다.
+    Firebase Analytics는 광고 식별자 없이 동작하는 구성(<code>FirebaseAnalyticsWithoutAdIdSupport</code>)을 사용합니다.
+  </p>
+  <p>
+    광고가 포함된 앱은 Apple <strong>SKAdNetwork</strong>를 통해 광고 성과를 집계할 수 있습니다.
+    이는 개인을 식별하기 위한 목적이 아니며, IDFA와 별개입니다.
+  </p>
+  <p>
+    IP 주소·진단·성능 관련 데이터는 Google AdMob 등 제3자 SDK가 광고 제공 및 SDK 운영 목적으로 처리할 수 있습니다.
+    개발자는 IDFA를 수집·사용하지 않습니다.
+  </p>
 
   <h2>3. 수집하지 않는 정보</h2>
   <ul>
@@ -69,53 +96,86 @@
     <li>연락처·사진·마이크·카메라·정밀 위치</li>
     <li>사용자 콘텐츠의 개발자 서버 전송·보관</li>
     <li>교차 앱 추적용 IDFA</li>
+    <li>Firebase Crashlytics 등 별도 크래시 리포팅 SDK를 통한 개발자 직접 수집(해당 SDK 미포함 앱)</li>
   </ul>
 
   <h2>4. 저장·동기화</h2>
   <ul>
     <li>앱 데이터는 사용자 <strong>기기</strong>에 저장됩니다.</li>
     <li>일부 앱은 사용자 설정 시 <strong>Apple iCloud</strong>로 기기 간 동기화합니다. 개발자는 해당 데이터에 접근하지 않습니다.</li>
-    <li>위젯·알림은 기기 내 데이터만 사용합니다.</li>
+    <li>위젯·로컬 알림은 기기 내 데이터만 사용합니다.</li>
   </ul>
 
-  <h2>5. 제3자 처리</h2>
+  <h2>5. 제3자 제공·처리 위탁</h2>
   <table>
     <thead>
-      <tr><th>제공자</th><th>서비스</th><th>방침</th></tr>
+      <tr><th>제공자</th><th>서비스</th><th>역할</th><th>방침</th></tr>
     </thead>
     <tbody>
       <tr>
-        <td>Google</td>
-        <td>Firebase Analytics, AdMob, UMP(동의 관리)</td>
+        <td>Google LLC</td>
+        <td>Firebase Analytics, AdMob, UMP</td>
+        <td>분석·광고·동의 관리(처리 위탁)</td>
         <td><a href="https://policies.google.com/privacy" rel="noopener">Google 개인정보처리방침</a></td>
       </tr>
       <tr>
-        <td>Apple</td>
-        <td>iCloud, App Store</td>
+        <td>Apple Inc.</td>
+        <td>iCloud, App Store, SKAdNetwork</td>
+        <td>동기화(선택)·배포·광고 성과 집계</td>
         <td><a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple 개인정보 처리방침</a></td>
       </tr>
     </tbody>
   </table>
-  <p>개발자는 사용자 정보를 <strong>판매하지 않습니다</strong>.</p>
+  <p>개발자는 사용자 정보를 <strong>판매하지 않습니다</strong>(CCPA/CPRA 등에서 말하는 “판매”에 해당하지 않음).</p>
 
-  <h2>6. 보유 기간</h2>
+  <h2>6. 보유 및 이용 기간</h2>
+  <p>개인정보보호법 등 관련 법령에 따른 보유 기간은 다음과 같습니다.</p>
   <ul>
-    <li>기기·iCloud 데이터: 사용자가 삭제하거나 앱을 제거할 때까지</li>
-    <li>분석·광고 데이터: Google 서비스 정책에 따름</li>
-    <li>문의 메일: 처리 후 합리적 기간 내 삭제</li>
+    <li><strong>기기·iCloud 데이터:</strong> 사용자가 앱에서 삭제하거나 앱을 제거할 때까지(또는 iCloud 동기화 해제 시)</li>
+    <li><strong>분석·광고 데이터:</strong> Google 각 서비스의 보존 정책에 따름(예: Analytics 이벤트 보존은 콘솔 설정에 따름)</li>
+    <li><strong>문의 메일:</strong> 처리 완료 후 합리적 기간(통상 1년 이내) 내 삭제</li>
   </ul>
 
   <h2>7. 이용자 권리</h2>
-  <p>열람·정정·삭제·처리 정지 등 관련 법령(GDPR, CCPA/CPRA, 개인정보보호법 등)에 따른 권리를 행사할 수 있습니다. 요청: <a href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com</a></p>
-  <p>EEA·영국·스위스 사용자에게는 AdMob UMP 동의 화면이 표시될 수 있습니다.</p>
+  <p>
+    열람·정정·삭제·처리 정지·동의 철회 등 관련 법령(GDPR, CCPA/CPRA, 개인정보보호법 등)에 따른 권리를 행사할 수 있습니다.
+    요청: <a href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com</a>
+  </p>
+  <p>EEA·영국·스위스 사용자에게는 AdMob UMP(동의 관리) 화면이 표시될 수 있으며, 앱·설정에서 광고 동의를 변경할 수 있습니다(UMP 정책 및 앱 구현에 따름).</p>
 
   <h2>8. 아동</h2>
   <p>앱은 만 13세(또는 해당 지역 법정 연령) 미만을 대상으로 하지 않으며, 고의로 아동 개인정보를 수집하지 않습니다.</p>
 
   <h2>9. 국제 이전</h2>
-  <p>Google·Apple 서비스 이용 시 정보가 해외(예: 미국)에서 처리될 수 있습니다.</p>
+  <p>
+    Google·Apple 서비스 이용 시 정보가 대한민국 외(예: 미국)에서 처리·저장될 수 있습니다.
+    Google은 적용 가능한 데이터 이전 메커니즘(예: 데이터 프라이버시 프레임워크)을 사용할 수 있습니다.
+  </p>
 
-  <h2>10. 변경</h2>
+  <h2>10. 보안</h2>
+  <p>
+    개발자는 개인정보 보호를 위해 합리적인 기술적·관리적 조치를 취합니다.
+    다만 인터넷·모바일 환경의 특성상 전송·저장의 완전한 보안을 보장할 수는 없습니다.
+    민감한 정보는 앱에 입력하지 않는 것을 권장합니다.
+  </p>
+
+  <h2>11. App Store Connect 데이터 공개</h2>
+  <p>Apple App Store Connect의 App Privacy(영양 라벨)에는 본 방침과 <strong>동일한 범위</strong>로 기재합니다. 분석·광고가 포함된 앱의 일반적인 예시는 다음과 같습니다.</p>
+  <table>
+    <thead>
+      <tr><th>데이터 유형</th><th>수집</th><th>추적</th><th>사용자 연결</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Product Interaction</td><td>예</td><td>아니오</td><td>아니오</td></tr>
+      <tr><td>Advertising Data</td><td>예(광고 앱)</td><td>아니오</td><td>아니오</td></tr>
+      <tr><td>Crash Data</td><td>아니오*</td><td>—</td><td>—</td></tr>
+      <tr><td>User Content</td><td>아니오†</td><td>—</td><td>—</td></tr>
+      <tr><td>Identifiers (IDFA)</td><td>아니오</td><td>—</td><td>—</td></tr>
+    </tbody>
+  </table>
+  <p class="meta">* Crashlytics 등 크래시 SDK 미포함 앱 기준. † 개발자 서버 미전송 기준.</p>
+
+  <h2>12. 방침 변경</h2>
   <p>본 페이지의 시행일·버전을 갱신합니다. 중요한 변경은 앱 업데이트 설명으로 안내할 수 있습니다.</p>
 
   <footer>
