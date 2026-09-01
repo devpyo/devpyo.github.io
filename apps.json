@@ -6,14 +6,5 @@
     "ko": "https://devpyo.github.io/privacy-ko.html",
     "en": "https://devpyo.github.io/privacy-en.html",
     "default": "https://devpyo.github.io/privacy.html"
-  },
-  "apps": [
-    {
-      "id": "dday-view",
-      "name": "D-Day View",
-      "bundle_id": "app.valut.proj001",
-      "platform": "iOS",
-      "anchor": "dday-view"
-    }
-  ]
+  }
 }

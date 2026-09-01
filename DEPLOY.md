@@ -23,6 +23,4 @@ bash scripts/deploy.sh
 
 ## 새 앱 추가
 
-1. `apps.json`에 항목 추가
-2. `privacy-ko.html` · `privacy-en.html` 부록에 `<h3>` 블록 추가
-3. `index.html` 앱 목록 갱신
+방침 본문은 모든 앱에 공통 적용됩니다. SDK·기능이 달라지면 `privacy-ko.html` · `privacy-en.html` 본문을 갱신하고 시행일을 수정하세요.
