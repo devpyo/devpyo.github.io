@@ -9,6 +9,7 @@
 | 한국어 (ASC) | https://devpyo.github.io/privacy-ko.html |
 | English | https://devpyo.github.io/privacy-en.html |
 | 기본 (→ KO) | https://devpyo.github.io/privacy.html |
+| AdMob app-ads.txt | https://devpyo.github.io/app-ads.txt |
 
 ## devpyo 계정에 새로 올리기
 
