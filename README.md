@@ -9,6 +9,7 @@ Public legal pages for all apps published by [devpyo](https://github.com/devpyo/
 | Legal home | https://devpyo.github.io/ |
 | Privacy (KO) — **use for ASC C4** | https://devpyo.github.io/privacy.html |
 | Privacy (EN) | https://devpyo.github.io/privacy-en.html |
+| AdMob app-ads.txt | https://devpyo.github.io/app-ads.txt |
 
 All apps share the same master policy. Per-app differences are in the **Appendix** section and `apps.json`.
 
