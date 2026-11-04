@@ -1,12 +1,17 @@
 # devpyo.github.io
 
-Public legal pages for all apps published by [devpyo](https://github.com/devpyo/).
+Portfolio at the root (`index.html`, `case-artdg.html`) and public legal pages for all apps published by [devpyo](https://github.com/devpyo/) under `/privacy/`.
+
+Legacy privacy URLs (`/privacy.html`, `/privacy-ko.html`, `/privacy-en.html`) stay live because app stores and AdMob point at them. `app-ads.txt` must stay at the root. Move the store listings to `/privacy/ko.html` and `/privacy/en.html`, then the legacy files can become redirects.
 
 ## URLs (after deploy)
 
 | Document | URL |
 | --- | --- |
-| Legal home | https://devpyo.github.io/ |
+| Portfolio | https://devpyo.github.io/ |
+| Legal home | https://devpyo.github.io/privacy/ |
+| Privacy (KO), new | https://devpyo.github.io/privacy/ko.html |
+| Privacy (EN), new | https://devpyo.github.io/privacy/en.html |
 | Privacy (KO) — **use for ASC C4** | https://devpyo.github.io/privacy.html |
 | Privacy (EN) | https://devpyo.github.io/privacy-en.html |
 | AdMob app-ads.txt | https://devpyo.github.io/app-ads.txt |

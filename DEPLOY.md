@@ -6,7 +6,10 @@
 
 | 문서 | URL |
 | --- | --- |
-| 한국어 (ASC) | https://devpyo.github.io/privacy-ko.html |
+| 포트폴리오 | https://devpyo.github.io/ |
+| 한국어 (새 주소) | https://devpyo.github.io/privacy/ko.html |
+| English (새 주소) | https://devpyo.github.io/privacy/en.html |
+| 한국어 (ASC, 기존 주소 유지) | https://devpyo.github.io/privacy-ko.html |
 | English | https://devpyo.github.io/privacy-en.html |
 | 기본 (→ KO) | https://devpyo.github.io/privacy.html |
 | AdMob app-ads.txt | https://devpyo.github.io/app-ads.txt |

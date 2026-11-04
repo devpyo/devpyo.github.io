@@ -1,43 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>devpyo — Legal</title>
-  <link rel="stylesheet" href="assets/style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>devpyo | 커머스·관리자 시스템 개발 2인 팀</title>
+<meta name="description" content="운영 중인 쇼핑몰 사례(artdg.com)의 커머스·관리자 시스템을 바탕으로 필요한 부분만 개발해 납기를 줄이는 2인 개발 팀. 설계·개발·검수를 나눠 맡습니다. 100% 원격, 프로젝트 단위 도급, 마일스톤 검수.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>devpyo Legal</h1>
-    <p class="meta">모든 앱에 공통 적용되는 정책 문서입니다.</p>
-  </header>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">devpyo</a>
+    <nav aria-label="주요 메뉴">
+      <ul>
+        <li><a href="#case">사례</a></li>
+        <li><a href="#scope">기존/신규 범위</a></li>
+        <li><a href="#safety">관리자 안전장치</a></li>
+        <li><a href="#process">진행 방식</a></li>
+        <li><a href="#risk">납품 안정성</a></li>
+        <li><a href="#contact">문의</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <h2>개인정보처리방침</h2>
-  <table>
-    <thead>
-      <tr><th>언어</th><th>파일</th><th>용도</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>한국어</td>
-        <td><a href="privacy-ko.html">privacy-ko.html</a></td>
-        <td>App Store Connect (한국), AdMob UMP</td>
-      </tr>
-      <tr>
-        <td>English</td>
-        <td><a href="privacy-en.html">privacy-en.html</a></td>
-        <td>해외 스토어, 영문 심사</td>
-      </tr>
-      <tr>
-        <td>리다이렉트</td>
-        <td><a href="privacy.html">privacy.html</a></td>
-        <td>→ privacy-ko.html (기존 URL 호환)</td>
-      </tr>
-    </tbody>
-  </table>
+<main id="main">
 
-  <footer>
-    문의: <a href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com</a>
-  </footer>
+<section id="top">
+  <div class="wrap">
+    <h1>작동하는 커머스·관리자 시스템을 바탕으로, 필요한 부분만 개발해 납기를 줄이는 2인 개발 팀</h1>
+    <p class="lead">설계·개발·검수를 역할별로 나눠 진행합니다. 처음부터 만들지 않고, 이미 운영 중인 카탈로그·장바구니·관리자 구조를 출발점으로 삼습니다. 고객사에 맞게 달라지는 부분만 새로 개발합니다.</p>
+    <ul class="badges" aria-label="계약 조건">
+      <li>100% 원격</li>
+      <li>프로젝트 단위 도급</li>
+      <li>마일스톤 검수</li>
+    </ul>
+    <div class="row">
+      <a class="btn" href="#scope">기존/신규 범위 표 보기</a>
+      <a class="btn ghost" href="case-artdg.html">사례 상세: artdg.com</a>
+    </div>
+  </div>
+</section>
+
+<section id="case" class="alt">
+  <div class="wrap">
+    <h2>공개 사례: artdg.com</h2>
+    <p class="sub">운영 중인 종이·미술 재료 쇼핑몰 카탈로그입니다. 공개 사례는 이 1건입니다.</p>
+    <div class="card">
+      <p>옛 그누보드/영카트 사이트를 Next.js 정적 사이트로 <strong>이관·재구축</strong>했습니다. 처음부터 새로 만든 사이트가 아니라, 기존 상품 데이터를 옮기고 구조를 다시 짠 작업입니다.</p>
+      <ul class="stats" aria-label="artdg.com 수치">
+        <li><b>135개</b><span>상품</span></li>
+        <li><b>5개</b><span>안내 페이지</span></li>
+        <li><b>2종</b><span>묶음 할인 규칙</span></li>
+        <li><b>52~170ms</b><span>상품정보 응답</span></li>
+        <li><b>288개</b><span>커밋</span></li>
+        <li><b>8일</b><span>활동일</span></li>
+      </ul>
+      <p>저장소는 비공개이므로 커밋 수, 활동일, 구조 요약만 공개합니다. 코드와 관리자 화면은 제안 단계에서 필요한 범위만 별도로 보여드립니다.</p>
+      <div class="note"><strong>네이버페이:</strong> 연동 중(sandbox 검수 단계)입니다. 실결제 운영 단계가 아닙니다.</div>
+      <div class="row">
+        <a class="btn" href="https://artdg.com/" rel="noopener">artdg.com 열기</a>
+        <a class="btn ghost" href="case-artdg.html">사례 상세 보기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="scope">
+  <div class="wrap">
+    <h2>기존 시스템으로 되는 것 / 고객별로 새로 개발할 것</h2>
+    <p class="sub">제안서마다 이 표를 고객 요구에 맞게 다시 작성합니다. 기존 시스템에 있는 부분은 새로 짓지 않으므로 그만큼 일정과 비용 부담이 줄어듭니다.</p>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 640 210" role="img" aria-labelledby="dg-t dg-d" xmlns="http://www.w3.org/2000/svg">
+        <title id="dg-t">기존 시스템과 고객별 개발 범위 구조</title>
+        <desc id="dg-d">아래층은 기존 시스템(카탈로그, 장바구니, 관리자, 배포·테스트)이고 위층은 고객별로 새로 개발할 부분(상품 데이터 이관, 디자인, 결제수단, 주문 워크플로, 회원)입니다.</desc>
+        <rect x="1" y="1" width="638" height="88" rx="10" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6 5"/>
+        <text x="16" y="28" fill="currentColor" font-size="15" font-weight="700">고객별로 새로 개발할 것</text>
+        <g font-size="13" fill="currentColor">
+          <text x="16" y="56">상품 데이터 이관 · 디자인 적용 · 결제수단 연동</text>
+          <text x="16" y="76">견적·주문 워크플로 · 취소·반품·상태 동기화 · 회원·로그인</text>
+        </g>
+        <rect x="1" y="105" width="638" height="104" rx="10" fill="none" stroke="currentColor" stroke-width="2"/>
+        <text x="16" y="132" fill="currentColor" font-size="15" font-weight="700">기존 시스템으로 되는 것</text>
+        <g font-size="13" fill="currentColor">
+          <text x="16" y="158">카탈로그·검색·분류 · 규격·가격·묶음 표시 · 수량 계산·장바구니</text>
+          <text x="16" y="178">관리자 · 변경 감사 기록 · 버전 충돌 방지 · 발행 절차</text>
+          <text x="16" y="198">Cloudflare Workers/D1 배포 · 자동 테스트·E2E·배포 가드</text>
+        </g>
+      </svg>
+    </figure>
+
+    <div class="tablewrap">
+      <table>
+        <caption>기존 시스템 / 고객별 개발 범위 (artdg.com 기준)</caption>
+        <thead>
+          <tr><th scope="col">영역</th><th scope="col">기존 시스템으로 되는 것</th><th scope="col">고객별로 새로 개발할 것</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">카탈로그</th>
+            <td class="have" data-label="기존 시스템으로 되는 것">상품 카탈로그, 검색, 분류</td>
+            <td class="build" data-label="고객별로 새로 개발할 것">고객 도메인의 상품 데이터 모델 이관, 디자인 적용</td>
+          </tr>
+          <tr>
+            <th scope="row">가격·수량</th>
+            <td class="have" data-label="기존 시스템으로 되는 것">규격·가격·묶음 단위 표시, 수량 계산과 장바구니</td>
+            <td class="build" data-label="고객별로 새로 개발할 것">견적·주문 워크플로</td>
+          </tr>
+          <tr>
+            <th scope="row">관리자</th>
+            <td class="have" data-label="기존 시스템으로 되는 것">상품·옵션, 카테고리, 판매 기준, 구매 규칙, 묶음 할인, 배송, 안내·법적 표기, 사업자 정보, 페이지·리다이렉트, 발행, 연결 점검, 에이전트 권한</td>
+            <td class="build" data-label="고객별로 새로 개발할 것">고객 업무에 맞는 항목과 화면 조정(범위 확정 후 별도 산정)</td>
+          </tr>
+          <tr>
+            <th scope="row">안전장치</th>
+            <td class="have" data-label="기존 시스템으로 되는 것">변경 감사 기록, 버전 충돌 방지</td>
+            <td class="build" data-label="고객별로 새로 개발할 것">고객사 정책에 맞는 기준값 조정</td>
+          </tr>
+          <tr>
+            <th scope="row">배포·품질</th>
+            <td class="have" data-label="기존 시스템으로 되는 것">Cloudflare Workers/D1 배포, 자동 테스트, E2E 테스트, 배포 가드</td>
+            <td class="build" data-label="고객별로 새로 개발할 것">고객 환경에 맞는 배포 설정</td>
+          </tr>
+          <tr>
+            <th scope="row">결제·주문</th>
+            <td class="have" data-label="기존 시스템으로 되는 것">네이버페이 연동 중(sandbox 검수 단계). 완성된 기능으로 보지 않습니다.</td>
+            <td class="build" data-label="고객별로 새로 개발할 것">고객사 결제수단 연동, 취소·반품·상태 동기화</td>
+          </tr>
+          <tr>
+            <th scope="row">회원</th>
+            <td class="have" data-label="기존 시스템으로 되는 것">없음</td>
+            <td class="build" data-label="고객별로 새로 개발할 것">회원·로그인</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sub" style="margin-top:1rem">취소·반품·교환·주문 상태 동기화와 회원·로그인은 artdg.com에 아직 없습니다. 필요하면 새로 개발하는 범위로 견적합니다.</p>
+  </div>
+</section>
+
+<section id="safety" class="alt">
+  <div class="wrap">
+    <h2>관리자 안전장치</h2>
+    <p class="sub">운영자가 실수해도 쇼핑몰이 바로 망가지지 않도록 artdg.com 관리자에 넣은 장치입니다.</p>
+    <div class="grid">
+      <div class="card"><h3 style="margin-top:0">가격 인하 1회 25% 이내</h3><p>한 번에 가격을 크게 내리는 입력 실수를 막습니다.</p></div>
+      <div class="card"><h3 style="margin-top:0">원본가 50% 미만 불가</h3><p>어떤 경우에도 원본가의 절반 아래로는 내릴 수 없습니다.</p></div>
+      <div class="card"><h3 style="margin-top:0">변경 감사 기록</h3><p>누가 무엇을 바꿨는지 기록으로 남깁니다.</p></div>
+      <div class="card"><h3 style="margin-top:0">버전 충돌 방지</h3><p>두 곳에서 동시에 고칠 때 한쪽이 다른 쪽을 덮어쓰지 않게 합니다.</p></div>
+      <div class="card"><h3 style="margin-top:0">발행 절차</h3><p>설정 변경은 초안을 거쳐 발행해야 사용자 화면에 반영됩니다. 발행 이력이 남습니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <h2>진행 방식</h2>
+    <ol class="steps">
+      <li><strong>1~2주 단위로 검수 가능한 결과물</strong>을 드립니다. 마일스톤마다 확인 후 다음 단계로 넘어갑니다.</li>
+      <li><strong>기능별 완료 기준</strong>을 착수 전에 문서로 정합니다.</li>
+      <li><strong>착수금·중도금·잔금</strong>으로 나누어 진행합니다. 견적은 범위 확정 후 제시합니다.</li>
+      <li><strong>범위 외 기능은 별도 견적</strong>입니다. 범위가 바뀌면 일정과 금액을 먼저 합의합니다.</li>
+      <li><strong>테스트·배포·관리자 매뉴얼</strong>을 함께 인도합니다.</li>
+      <li><strong>소스 인수인계 범위</strong>와 <strong>무상 하자보수 범위</strong>를 계약서에 명시합니다.</li>
+      <li>미팅은 <strong>온라인으로만</strong> 진행합니다.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="risk" class="alt">
+  <div class="wrap">
+    <h2>납품 안정성</h2>
+    <p class="sub">일정 지연, 품질 저하, 인수인계 문제를 계약 전에 먼저 다룹니다.</p>
+    <ul class="plain">
+      <li><strong>역할 분담과 책임:</strong> 설계 결정, 구현, 검수를 나눠 맡고, 납품 책임은 책임 엔지니어가 집니다.</li>
+      <li><strong>문서화:</strong> 구조, 배포 절차, 운영 방법을 문서로 남겨 다른 개발자도 이어받을 수 있게 합니다.</li>
+      <li><strong>자동 테스트:</strong> 변경할 때마다 자동 테스트와 E2E 테스트로 기존 기능이 깨지지 않았는지 확인합니다.</li>
+      <li><strong>일정 여유:</strong> 일정에 여유 기간을 두고 납기를 제안합니다.</li>
+      <li><strong>동시 진행 제한:</strong> 여러 건을 동시에 진행하지 않습니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="demo">
+  <div class="wrap">
+    <h2>관리자 데모 영상</h2>
+    <p>3분 관리자 데모 영상은 제안 시 비공개 링크로 전달합니다.</p>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap">
+    <h2>문의</h2>
+    <p class="sub">공고 링크나 요구사항을 보내 주시면 기존/신규 범위 표를 먼저 작성해 드립니다.</p>
+    <dl class="facts">
+      <dt>이메일</dt><dd><a href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com</a></dd>
+      <dt>미팅</dt><dd>온라인만 가능합니다.</dd>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>devpyo · 100% 원격 · 프로젝트 단위 도급 · <a href="privacy/">개인정보 처리방침</a></p>
+  </div>
+</footer>
 </body>
 </html>
