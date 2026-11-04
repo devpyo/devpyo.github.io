@@ -83,3 +83,5 @@ footer p{margin:0;max-width:none}
   dl.facts>:nth-last-child(-n+2){border-bottom:0}
   dl.facts dd:last-child{border-bottom:1px solid var(--line)}
 }
+
+video{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;background:var(--bg,#faf8f5);margin:1rem 0 .5rem}
