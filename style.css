@@ -55,6 +55,12 @@ tr:has(input:checked) th{font-weight:600}
 #groups li small{display:block;color:var(--muted);font-size:.875rem}
 .actions{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:1rem 0 0}
 .linkbtn{font:inherit;color:var(--accent);background:none;border:0;padding:0;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;cursor:pointer}
+figure{margin:2rem 0}
+figure a{display:block}
+img{display:block;max-width:100%;height:auto;border:1px solid var(--line)}
+figcaption{color:var(--muted);font-size:.875rem;margin-top:.5rem;max-width:40rem}
+.shots{display:flex;flex-wrap:wrap;gap:0 1.5rem}
+.shots figure{width:calc(50% - .75rem);max-width:12rem}
 [hidden]{display:none!important}
 .mail-big{font-size:1.5rem;font-weight:600}
 footer{margin-top:4rem;padding:1.5rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);font-size:.875rem}
