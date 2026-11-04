@@ -48,13 +48,7 @@ tr:has(input:checked) th{font-weight:600}
 .partial{font-weight:600}
 .pick{display:flex;align-items:baseline;gap:.5rem;cursor:pointer}
 .pick input{flex:none;width:1.125rem;height:1.125rem;margin:0;accent-color:var(--accent);transform:translateY(.15rem)}
-#result{border-top:1px solid var(--fg);padding-top:1rem}
-.summary{font-size:1.25rem;font-weight:600;margin:0 0 .5rem}
 .gt{font-weight:600;margin:1rem 0 0}
-#groups ul{margin:.25rem 0 0}
-#groups li small{display:block;color:var(--muted);font-size:.875rem}
-.actions{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin:1rem 0 0}
-.linkbtn{font:inherit;color:var(--accent);background:none;border:0;padding:0;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;cursor:pointer}
 figure{margin:2rem 0}
 figure a{display:block}
 img{display:block;max-width:100%;height:auto;border:1px solid var(--line)}

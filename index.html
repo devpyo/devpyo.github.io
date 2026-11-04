@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>devpyo | 커머스·관리자 시스템 개발 2인 팀</title>
-<meta name="description" content="기존 커머스·관리자 구조에서 출발해 필요한 부분만 새로 개발하는 2인 개발 팀. 100% 원격, 프로젝트 단위 도급. 기능별로 기존 구조로 되는 것, 일부 재사용, 새로 개발할 것을 나눠 보여 줍니다.">
+<title>devpyo | 커머스·관리자 시스템 개발 팀</title>
+<meta name="description" content="커머스·관리자 시스템을 만드는 개발 팀의 포트폴리오. 운영 중인 쇼핑몰 사례(artdg.com)의 구현 범위, 관리자 화면, 안전장치, 진행 방식을 정리했습니다.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
@@ -20,51 +20,38 @@
 
 <main id="main" class="wrap">
 
-<h1>작동하는 커머스·관리자 시스템에서 출발해, 필요한 부분만 새로 개발합니다</h1>
-<p class="lead">devpyo는 2인 개발 팀입니다. 100% 원격으로, 총액과 산출물을 먼저 정하는 프로젝트 단위 도급으로 일합니다. 공개 사례는 쇼핑몰 artdg.com을 옛 사이트에서 옮겨 다시 만든 1건입니다.</p>
+<h1>커머스·관리자 시스템을 만드는 개발 팀</h1>
+<p class="lead">devpyo는 개발 팀입니다. 100% 원격으로, 총액과 산출물을 먼저 정하는 프로젝트 단위 도급으로 일합니다. 공개 사례는 쇼핑몰 artdg.com을 옛 사이트에서 옮겨 다시 만든 1건입니다.</p>
 
 <dl class="facts">
   <dt>계약</dt><dd>프로젝트 단위 도급. 기능별 완료 기준과 총액을 착수 전에 문서로 정합니다.</dd>
   <dt>방식</dt><dd>100% 원격. 미팅은 온라인으로만 합니다.</dd>
   <dt>검수</dt><dd>1~2주 단위 마일스톤마다 검수 가능한 결과물을 드립니다.</dd>
   <dt>인도물</dt><dd>테스트·배포·관리자 매뉴얼. 소스 인수인계 범위는 계약서에 명시합니다.</dd>
-  <dt>견적</dt><dd>범위를 확정한 뒤 제시합니다. 이 사이트에는 가격과 일정을 적지 않습니다.</dd>
 </dl>
 
 <section id="scope">
-  <h2>범위: 기존 구조로 되는 것, 새로 개발할 것</h2>
-  <p>필요한 기능에 체크하면 기존 구조로 되는 것, 일부 재사용하는 것, 새로 개발할 것의 개수를 셉니다. 기준은 artdg.com입니다. 비율, 가격, 일정은 표시하지 않습니다.</p>
-  <table id="class-table">
-    <caption>기능별 분류표 (artdg.com 기준)</caption>
+  <h2>구현 범위</h2>
+  <p>공개 사례 artdg.com에서 구현한 것, 검수 중인 것, 만들지 않은 것입니다.</p>
+  <table>
+    <caption>artdg.com 기능별 구현 상태</caption>
     <thead>
-      <tr><th scope="col">기능</th><th scope="col">분류</th><th scope="col">비고</th></tr>
+      <tr><th scope="col">기능</th><th scope="col">상태</th><th scope="col">비고</th></tr>
     </thead>
     <tbody>
-      <tr data-group="have"><th scope="row">상품 카탈로그·검색·분류</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>기존</span></td><td class="note-cell"></td></tr>
-      <tr data-group="have"><th scope="row">규격·가격·묶음 단위 표시</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>기존</span></td><td class="note-cell"></td></tr>
-      <tr data-group="have"><th scope="row">수량 계산과 장바구니</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>기존</span></td><td class="note-cell"></td></tr>
-      <tr data-group="have"><th scope="row">관리자 상품·옵션·가격 관리</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>기존</span></td><td class="note-cell"></td></tr>
-      <tr data-group="have"><th scope="row">묶음 할인·배송·구매 규칙 설정</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>기존</span></td><td class="note-cell"></td></tr>
-      <tr data-group="have"><th scope="row">변경 이력·감사 기록</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>기존</span></td><td class="note-cell"></td></tr>
-      <tr data-group="have"><th scope="row">정적 배포와 자동 테스트</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>기존</span></td><td class="note-cell"></td></tr>
-      <tr data-group="partial"><th scope="row">네이버페이 결제</th><td><span class="partial"><span class="mk" aria-hidden="true">◐</span>일부 재사용</span></td><td class="note-cell">주문등록 흐름은 sandbox 검수 중이며 고객사별 설정이 필요합니다.</td></tr>
-      <tr data-group="partial"><th scope="row">고객 디자인 적용</th><td><span class="partial"><span class="mk" aria-hidden="true">◐</span>일부 재사용</span></td><td class="note-cell">레이아웃 구조는 재사용합니다.</td></tr>
-      <tr data-group="new"><th scope="row">고객 상품 데이터 이관</th><td><span class="new"><span class="mk" aria-hidden="true">○</span>새로 개발</span></td><td class="note-cell"></td></tr>
-      <tr data-group="new"><th scope="row">고객사 결제수단 연동</th><td><span class="new"><span class="mk" aria-hidden="true">○</span>새로 개발</span></td><td class="note-cell"></td></tr>
-      <tr data-group="new"><th scope="row">견적·주문 워크플로</th><td><span class="new"><span class="mk" aria-hidden="true">○</span>새로 개발</span></td><td class="note-cell"></td></tr>
-      <tr data-group="new"><th scope="row">취소·반품·교환·주문 상태 동기화</th><td><span class="new"><span class="mk" aria-hidden="true">○</span>새로 개발</span></td><td class="note-cell">artdg.com에는 아직 없습니다.</td></tr>
-      <tr data-group="new"><th scope="row">회원·로그인</th><td><span class="new"><span class="mk" aria-hidden="true">○</span>새로 개발</span></td><td class="note-cell">artdg.com에는 아직 없습니다.</td></tr>
-      <tr data-group="new"><th scope="row">ERP 등 외부 시스템 연동</th><td><span class="new"><span class="mk" aria-hidden="true">○</span>새로 개발</span></td><td class="note-cell"></td></tr>
+      <tr><th scope="row">상품 카탈로그·검색·분류</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>구현</span></td><td class="note-cell"></td></tr>
+      <tr><th scope="row">규격·가격·묶음 단위 표시</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>구현</span></td><td class="note-cell"></td></tr>
+      <tr><th scope="row">수량 계산과 장바구니</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>구현</span></td><td class="note-cell"></td></tr>
+      <tr><th scope="row">관리자 상품·옵션·가격 관리</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>구현</span></td><td class="note-cell"></td></tr>
+      <tr><th scope="row">묶음 할인·배송·구매 규칙 설정</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>구현</span></td><td class="note-cell"></td></tr>
+      <tr><th scope="row">변경 이력·감사 기록</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>구현</span></td><td class="note-cell"></td></tr>
+      <tr><th scope="row">정적 배포와 자동 테스트</th><td><span class="have"><span class="mk" aria-hidden="true">●</span>구현</span></td><td class="note-cell"></td></tr>
+      <tr><th scope="row">네이버페이 결제</th><td><span class="partial"><span class="mk" aria-hidden="true">◐</span>검수 중</span></td><td class="note-cell">sandbox 검수 단계입니다. 운영 주문 등록은 승인 전까지 닫혀 있습니다.</td></tr>
+      <tr><th scope="row">취소·반품·교환·주문 상태 동기화</th><td><span class="new"><span class="mk" aria-hidden="true">○</span>미구현</span></td><td class="note-cell"></td></tr>
+      <tr><th scope="row">회원·로그인</th><td><span class="new"><span class="mk" aria-hidden="true">○</span>미구현</span></td><td class="note-cell"></td></tr>
+      <tr><th scope="row">자체 결제 화면·주문내역</th><td><span class="new"><span class="mk" aria-hidden="true">○</span>미구현</span></td><td class="note-cell"></td></tr>
     </tbody>
   </table>
-  <div id="result" aria-live="polite" hidden>
-    <p class="summary" id="summary"></p>
-    <div id="groups"></div>
-    <p class="actions">
-      <a id="mail" href="mailto:dev.pyo@gmail.com" hidden>이 선택으로 문의하기</a>
-      <button type="button" class="linkbtn" id="reset" hidden>선택 초기화</button>
-    </p>
-  </div>
 </section>
 
 <section id="case">
@@ -83,26 +70,16 @@
 <section id="process">
   <h2>진행 방식</h2>
   <ol class="steps">
-    <li><strong>1. 범위와 완료 기준 (착수금)</strong>기능별 완료 기준을 착수 전에 문서로 정합니다. 견적은 범위 확정 후 제시합니다.</li>
+    <li><strong>1. 범위와 완료 기준 (착수금)</strong>기능별 완료 기준을 착수 전에 문서로 정합니다. </li>
     <li><strong>2. 1~2주 단위 검수 (중도금)</strong>마일스톤마다 검수 가능한 결과물을 드립니다. 확인한 뒤 다음 단계로 넘어갑니다.</li>
     <li><strong>3. 인수인계 (잔금)</strong>테스트·배포·관리자 매뉴얼을 함께 인도하고, 소스 인수인계 범위를 계약서에 명시합니다.</li>
-    <li><strong>4. 하자보수</strong>무상 하자보수 범위를 계약서에 명시합니다. 범위 밖 기능은 별도 견적이며, 범위가 바뀌면 일정과 금액을 먼저 합의합니다.</li>
+    <li><strong>4. 하자보수</strong>무상 하자보수 범위를 계약서에 명시합니다. 범위가 바뀌면 일정과 금액을 먼저 합의합니다.</li>
   </ol>
-</section>
-
-<section id="limits">
-  <h2>아직 없는 것</h2>
-  <ul>
-    <li>취소·반품·교환, 주문 상태 동기화: artdg.com에는 아직 없습니다. 고객 프로젝트에서 필요하면 새로 개발합니다.</li>
-    <li>네이버페이: 연동 중(sandbox 검수 단계)입니다. 실제 결제 완료는 확인하지 않았습니다.</li>
-    <li>자체 로그인, 회원, 자체 결제 화면, 주문내역: 만들지 않았습니다.</li>
-  </ul>
 </section>
 
 <section id="contact">
   <h2>문의</h2>
-  <p>공고 링크나 요구사항을 보내 주세요. 기존 구조로 되는 것과 새로 개발할 것을 먼저 나눠서 답변드립니다.</p>
-  <p class="mail-big"><a href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com</a></p>
+    <p class="mail-big"><a href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com</a></p>
 </section>
 
 </main>
@@ -112,6 +89,5 @@
     <p>devpyo · 100% 원격 · 프로젝트 단위 도급 · <a href="privacy/">개인정보 처리방침</a></p>
   </div>
 </footer>
-<script src="script.js" defer></script>
 </body>
 </html>
