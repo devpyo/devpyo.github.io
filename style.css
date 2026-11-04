@@ -31,7 +31,8 @@ section+section{border-top:1px solid var(--line)}
 h1{font-size:clamp(2rem,1rem + 4.6vw,4.1rem);line-height:1.2;margin:0 0 1.25rem;letter-spacing:-.025em;font-weight:800;max-width:20ch}
 h2{font-size:clamp(1.55rem,1rem + 2.2vw,2.5rem);line-height:1.25;margin:0 0 .75rem;letter-spacing:-.02em;font-weight:800}
 h3{font-size:1.15rem;margin:0 0 .4rem;line-height:1.4}
-h4{font-size:1rem;margin:1.25rem 0 .4rem}
+h4{font-size:1.1rem;margin:1.25rem 0 .4rem;line-height:1.4}
+.card h4{margin-top:0}
 p{margin:.5rem 0}
 .eyebrow{color:var(--accent);font-weight:700;font-size:.9rem;letter-spacing:.04em;margin:0 0 .5rem}
 .lead{font-size:clamp(1.05rem,1rem + .5vw,1.3rem);color:var(--muted);max-width:40rem}
