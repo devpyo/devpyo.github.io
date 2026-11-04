@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>사례 상세: artdg.com 이관·재구축 | devpyo</title>
-<meta name="description" content="artdg.com 사례 상세. 옛 그누보드/영카트 쇼핑몰을 Next.js 정적 사이트와 Cloudflare Workers/D1 위의 관리자 구조로 이관·재구축한 범위와 아직 없는 기능을 구분해 설명합니다.">
+<meta name="description" content="artdg.com 사례 상세. 옛 그누보드/영카트 쇼핑몰을 Next.js 정적 사이트와 Cloudflare Workers/D1 위의 관리자 구조로 이관·재구축한 범위와 아직 없는 기능을 4장으로 나눠 설명합니다.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
@@ -16,7 +16,8 @@
     <a class="brand" href="index.html">devpyo</a>
     <nav aria-label="주요 메뉴">
       <ul>
-        <li><a href="index.html#scope">기존/신규 범위</a></li>
+        <li><a href="index.html#case">사례</a></li>
+        <li><a href="index.html#scope">범위 도구</a></li>
         <li><a href="index.html#process">진행 방식</a></li>
         <li><a href="index.html#contact">문의</a></li>
       </ul>
@@ -31,55 +32,102 @@
     <p class="crumb"><a href="index.html">← 처음으로</a></p>
     <h1>사례 상세: artdg.com 이관·재구축</h1>
     <p class="lead">운영 중인 종이·미술 재료 쇼핑몰 카탈로그입니다. 옛 그누보드/영카트 사이트를 Next.js 정적 사이트로 옮기고, 관리자에서 값을 바꿔 발행하는 구조로 다시 만들었습니다.</p>
-    <p><a class="btn" href="https://artdg.com/" rel="noopener">artdg.com 열기</a></p>
     <dl class="facts">
       <dt>성격</dt><dd>이관·재구축 (처음부터 만든 사이트가 아닙니다)</dd>
       <dt>공개 사례</dt><dd>이 1건입니다. 여러 고객사 납품 실적이 아닙니다.</dd>
       <dt>기간</dt><dd>커밋 288개, 활동일 8일</dd>
     </dl>
+    <p class="row"><a class="btn" href="https://artdg.com/" rel="noopener">실서비스 보기: artdg.com</a></p>
+    <nav aria-label="사례 4장">
+      <ul class="pills">
+        <li><a href="#ch1">1장 이관과 구조</a></li>
+        <li><a href="#ch2">2장 관리자와 안전장치</a></li>
+        <li><a href="#ch3">3장 주문과 네이버페이</a></li>
+        <li><a href="#ch4">4장 납품 방식</a></li>
+      </ul>
+    </nav>
   </div>
 </section>
 
-<section class="alt">
+<section id="ch1">
   <div class="wrap">
-    <h2>1. 문제와 범위</h2>
-    <p>옛 사이트의 상품 데이터를 새 구조로 옮기고, 방문자가 상품을 찾고 수량을 계산해 장바구니에 담을 수 있게 하는 것이 범위였습니다. 운영자는 코드를 고치지 않고 관리자에서 값을 바꿉니다.</p>
-    <ul class="stats" aria-label="수치">
+    <p class="eyebrow">1장</p>
+    <h2>이관과 구조</h2>
+    <p class="sub">옛 사이트의 상품 데이터를 새 구조로 옮기고, 방문자가 상품을 찾고 수량을 계산해 장바구니에 담을 수 있게 하는 것이 범위였습니다. 상품 데이터는 옛 사이트 DB에서 가져왔습니다.</p>
+    <ul class="num reveal" aria-label="수치">
       <li><b>135개</b><span>상품</span></li>
       <li><b>5개</b><span>안내 페이지</span></li>
       <li><b>2종</b><span>묶음 할인 규칙</span></li>
       <li><b>52~170ms</b><span>상품정보 응답</span></li>
     </ul>
-    <p>상품 데이터는 옛 사이트 DB에서 가져왔습니다.</p>
+    <div class="split">
+      <figure class="diagram reveal">
+        <svg viewBox="0 0 400 290" role="img" aria-labelledby="dg-t dg-d">
+          <title id="dg-t">이관과 구조 그림</title>
+          <desc id="dg-d">옛 그누보드/영카트 사이트의 상품 데이터를 이관해 Next.js 정적 사이트가 되고, 접근 제한이 걸린 관리자에서 편집·발행한 내용이 사이트에 반영됩니다. 둘 다 Cloudflare Workers와 D1 위에서 동작합니다.</desc>
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="dg-arrow" d="M0 0L10 5L0 10z"/></marker>
+          </defs>
+          <rect class="dg-box" x="20" y="14" width="360" height="58" rx="10"/>
+          <text class="dg-t" x="36" y="40">옛 사이트 (그누보드/영카트)</text>
+          <text class="dg-s" x="36" y="60">상품 데이터</text>
+          <path class="dg-line" d="M200 74V104" marker-end="url(#ar)"/>
+          <text class="dg-s" x="212" y="94">이관</text>
+          <rect class="dg-acc" x="20" y="108" width="170" height="76" rx="10"/>
+          <text class="dg-t" x="34" y="136">Next.js 정적 사이트</text>
+          <text class="dg-s" x="34" y="158">카탈로그 · 검색</text>
+          <text class="dg-s" x="34" y="174">수량 계산 · 장바구니</text>
+          <rect class="dg-box" x="210" y="108" width="170" height="76" rx="10"/>
+          <text class="dg-t" x="224" y="136">관리자 (접근 제한)</text>
+          <text class="dg-s" x="224" y="158">값 편집 → 발행</text>
+          <path class="dg-line" d="M208 146H194" marker-end="url(#ar)"/>
+          <path class="dg-line" d="M105 186V214" marker-end="url(#ar)"/>
+          <path class="dg-line" d="M295 186V214" marker-end="url(#ar)"/>
+          <rect class="dg-box" x="20" y="218" width="360" height="58" rx="10"/>
+          <text class="dg-t" x="36" y="245">Cloudflare Workers · D1</text>
+          <text class="dg-s" x="36" y="264">실행 환경과 데이터 저장</text>
+        </svg>
+      </figure>
+      <div>
+        <h3>구성 요소</h3>
+        <ul class="plain">
+          <li><strong>사용자 화면:</strong> Next.js 정적 사이트. 카탈로그, 검색, 분류, 규격·가격·묶음 단위 표시, 수량 계산, 장바구니.</li>
+          <li><strong>실행 환경:</strong> Cloudflare Workers와 D1 위에서 동작합니다.</li>
+          <li><strong>관리자:</strong> 접근 제한이 걸린 별도 경로에서 상품·설정·사이트 콘텐츠를 스키마 기반으로 편집하고 발행합니다.</li>
+          <li><strong>품질:</strong> 자동 테스트, E2E 테스트, 배포 가드, 운영 문서(RUNBOOK)가 있습니다.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-<section>
+<section id="ch2">
   <div class="wrap">
-    <h2>2. 구조</h2>
-    <ul class="plain">
-      <li><strong>사용자 화면:</strong> Next.js 정적 사이트. 카탈로그, 검색, 분류, 규격·가격·묶음 단위 표시, 수량 계산, 장바구니.</li>
-      <li><strong>실행 환경:</strong> Cloudflare Workers와 D1 위에서 동작합니다.</li>
-      <li><strong>관리자:</strong> 접근 제한이 걸린 별도 경로에서 상품·설정·사이트 콘텐츠를 스키마 기반으로 편집하고 발행합니다.</li>
-      <li><strong>품질:</strong> 자동 테스트, E2E 테스트, 배포 가드, 운영 문서(RUNBOOK)가 있습니다.</li>
-    </ul>
+    <p class="eyebrow">2장</p>
+    <h2>관리자와 안전장치</h2>
+    <p class="sub">운영자는 코드를 고치지 않고 관리자에서 값을 바꿉니다. 설정 변경은 초안을 거쳐 발행해야 사용자 화면에 반영되고, 발행 이력이 남습니다.</p>
     <h3>관리자 화면 범위</h3>
-    <p>상품·옵션, 카테고리, 판매 기준, 구매 규칙, 묶음 할인, 배송, 안내·법적 표기, 사업자 정보, 페이지·리다이렉트, 발행, 연결 점검, 에이전트 권한.</p>
-    <h3>관리자 안전장치</h3>
-    <ul class="plain">
-      <li>가격 인하 1회 25% 이내, 원본가 50% 미만 불가</li>
-      <li>변경 감사 기록, 버전 충돌 방지</li>
-      <li>설정 변경은 초안을 거쳐 발행해야 반영</li>
+    <ul class="pills">
+      <li>상품·옵션</li><li>카테고리</li><li>판매 기준</li><li>구매 규칙</li><li>묶음 할인</li><li>배송</li><li>안내·법적 표기</li><li>사업자 정보</li><li>페이지·리다이렉트</li><li>발행</li><li>연결 점검</li>
     </ul>
+    <h3 style="margin-top:1.5rem">안전장치</h3>
+    <div class="bento">
+      <div class="card third reveal"><h3>가격 인하 1회 25% 이내</h3><p>한 번에 가격을 크게 내리는 입력 실수를 막습니다.</p></div>
+      <div class="card third reveal"><h3>원본가 50% 미만 불가</h3><p>어떤 경우에도 원본가의 절반 아래로는 내릴 수 없습니다.</p></div>
+      <div class="card third reveal"><h3>변경 감사 기록</h3><p>누가 무엇을 바꿨는지 기록으로 남깁니다.</p></div>
+      <div class="card third reveal"><h3>버전 충돌 방지</h3><p>두 곳에서 동시에 고칠 때 한쪽이 다른 쪽을 덮어쓰지 않게 합니다.</p></div>
+      <div class="card third reveal"><h3>발행 절차</h3><p>초안을 거쳐 발행해야 반영되고, 발행 이력이 남습니다.</p></div>
+    </div>
   </div>
 </section>
 
-<section class="alt">
+<section id="ch3">
   <div class="wrap">
-    <h2>3. 결제·주문 상태</h2>
+    <p class="eyebrow">3장 <span class="chip partial">검수 중</span></p>
+    <h2>주문과 네이버페이</h2>
     <div class="note"><strong>네이버페이:</strong> 연동 중(sandbox 검수 단계)입니다. 실결제 운영 단계가 아닙니다.</div>
     <p>구매 버튼에서 주문서 화면으로 이어지는 흐름을 검수용 환경에서 확인하는 단계입니다. 실제 결제 완료는 확인하지 않았습니다.</p>
-    <h3>아직 없는 기능</h3>
+    <h3 style="margin-top:1.5rem">아직 없는 기능</h3>
     <ul class="plain">
       <li>취소·반품·교환, 주문 상태 동기화는 아직 만들지 않았습니다.</li>
       <li>자체 로그인, 회원, 자체 결제 화면, 주문내역은 만들지 않았습니다.</li>
@@ -88,50 +136,22 @@
   </div>
 </section>
 
-<section>
+<section id="ch4">
   <div class="wrap">
-    <h2>4. 다른 프로젝트에서 다시 쓰는 범위</h2>
-    <p>소스와 디자인의 재사용 권리를 보유하고 있습니다. 고객에게 소스 전체 소유권을 넘기는 계약인지는 건마다 따로 정합니다.</p>
-    <div class="tablewrap">
-      <table>
-        <caption>재사용 범위</caption>
-        <thead>
-          <tr><th scope="col">기존 시스템으로 되는 것</th><th scope="col">고객별로 새로 개발할 것</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="have" data-label="기존 시스템으로 되는 것">
-              <ul>
-                <li>상품 카탈로그, 검색, 분류</li>
-                <li>규격·가격·묶음 단위 표시</li>
-                <li>수량 계산과 장바구니</li>
-                <li>관리자 화면과 발행 절차</li>
-                <li>변경 감사 기록, 버전 충돌 방지</li>
-                <li>Cloudflare Workers/D1 배포, 자동 테스트·E2E·배포 가드</li>
-              </ul>
-            </td>
-            <td class="build" data-label="고객별로 새로 개발할 것">
-              <ul>
-                <li>고객 도메인의 상품 데이터 모델 이관</li>
-                <li>디자인 적용</li>
-                <li>고객사 결제수단 연동</li>
-                <li>견적·주문 워크플로</li>
-                <li>취소·반품·상태 동기화</li>
-                <li>회원·로그인</li>
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <h2>5. 공개하지 않는 것</h2>
-    <p>저장소는 비공개입니다. 이 페이지에는 커밋 수, 활동일, 구조 요약만 적었고 코드, 관리자 화면 이미지, 주문·운영 데이터는 싣지 않았습니다. 3분 관리자 데모 영상은 제안 시 비공개 링크로 전달합니다.</p>
-    <p class="row"><a class="btn" href="index.html#contact">문의 정보 보기</a></p>
+    <p class="eyebrow">4장</p>
+    <h2>납품 방식</h2>
+    <p class="sub">소스와 디자인의 재사용 권리를 보유하고 있습니다. 고객에게 소스 전체 소유권을 넘기는 계약인지는 건마다 따로 정합니다.</p>
+    <ul class="plain">
+      <li>기능별 완료 기준을 착수 전에 문서로 정하고, 1~2주 단위로 검수합니다.</li>
+      <li>테스트·배포·관리자 매뉴얼을 함께 인도합니다.</li>
+      <li>소스 인수인계 범위와 무상 하자보수 범위를 계약서에 명시합니다.</li>
+    </ul>
+    <h3 style="margin-top:1.5rem">공개하지 않는 것</h3>
+    <p>저장소는 비공개입니다. 이 페이지에는 커밋 수, 활동일, 구조 요약만 적었고 코드, 관리자 화면 이미지, 주문·운영 데이터는 싣지 않았습니다.</p>
+    <p class="row">
+      <a class="btn" href="index.html#scope">내 프로젝트 범위 가르기</a>
+      <a class="btn ghost" href="index.html#process">진행 방식 보기</a>
+    </p>
   </div>
 </section>
 
