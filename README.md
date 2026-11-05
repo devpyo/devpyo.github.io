@@ -1,6 +1,6 @@
 # devpyo.github.io
 
-Portfolio at the root (`index.html`, `case-artdg.html`) and public legal pages for all apps published by [devpyo](https://github.com/devpyo/) under `/privacy/`.
+Public legal pages for all apps published by [devpyo](https://github.com/devpyo/) under `/privacy/`.
 
 Legacy privacy URLs (`/privacy.html`, `/privacy-ko.html`, `/privacy-en.html`) stay live because app stores and AdMob point at them. `app-ads.txt` must stay at the root. Move the store listings to `/privacy/ko.html` and `/privacy/en.html`, then the legacy files can become redirects.
 
@@ -20,7 +20,6 @@ All apps share the same master policy. Per-app differences are in the **Appendix
 ## Add a new app
 
 1. Edit `apps.json` — add an entry under `apps`.
-2. Add a row to `index.html` (apps table).
 3. Add `<h3 id="...">` appendix block to `privacy.html` and `privacy-en.html`.
 4. Bump `policy_version` in `apps.json` and the “최종 수정” date in both HTML files.
 5. Commit and push (Pages rebuilds automatically).
