@@ -8,7 +8,6 @@ Legacy privacy URLs (`/privacy.html`, `/privacy-ko.html`, `/privacy-en.html`) st
 
 | Document | URL |
 | --- | --- |
-| Portfolio | https://devpyo.github.io/ |
 | Legal home | https://devpyo.github.io/privacy/ |
 | Privacy (KO), new | https://devpyo.github.io/privacy/ko.html |
 | Privacy (EN), new | https://devpyo.github.io/privacy/en.html |
