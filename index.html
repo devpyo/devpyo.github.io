@@ -69,6 +69,7 @@
     <a class="brand" href="index.html">devpyo</a>
     <nav aria-label="페이지 이동">
       <a href="#skills">역량</a>
+      <a href="#arch">설계</a>
       <a href="#works">포트폴리오</a>
       <a href="#process">진행 방식</a>
     </nav>
@@ -180,9 +181,71 @@
   </div>
 </section>
 
+<section class="band" id="arch" aria-labelledby="arch-h">
+  <div class="wrap">
+    <div class="label"><b>02</b><span>설계</span></div>
+    <h2 id="arch-h">구조와 설계 결정</h2>
+    <p class="arch-lead">기능이 아니라 구조로 일합니다. 아래는 공개 사례 artdg.com이 실제로 돌아가는 구조와, 그렇게 정한 이유입니다.</p>
+
+    <div class="lanes" role="group" aria-label="artdg.com 시스템 구조">
+      <div class="lane">
+        <h3>운영 <small>값을 바꾸는 쪽</small></h3>
+        <ol class="chain">
+          <li><b>관리자</b><span>접근 제한 + 서버에서 토큰 재검증</span></li>
+          <li><b>설정 저장소 (D1)</b><span>초안 · 변경 이력 · 버전</span></li>
+          <li><b>발행 절차</b><span>검증 후 정적 파일 생성</span></li>
+        </ol>
+      </div>
+      <div class="lane">
+        <h3>공개 <small>방문자가 보는 쪽</small></h3>
+        <ol class="chain">
+          <li><b>콘텐츠 정본 (JSON)</b><span>상품·분류·안내·규칙</span></li>
+          <li><b>정적 사이트 (Next.js)</b><span>빌드 시점에 화면 생성</span></li>
+          <li><b>Cloudflare Workers</b><span>정적 파일 배포</span></li>
+        </ol>
+      </div>
+      <div class="lane">
+        <h3>주문 <small>별도로 분리된 쪽</small></h3>
+        <ol class="chain">
+          <li><b>브라우저</b><span>장바구니는 기기에만 저장</span></li>
+          <li><b>API Worker</b><span>주문 등록 · 상품정보 응답</span></li>
+          <li class="pend"><b>네이버페이</b><span>검수 중 (sandbox)</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <ol class="decisions">
+      <li>
+        <h3>공개 화면과 주문 처리를 나눴습니다</h3>
+        <p>화면은 정적 파일이라 빠르고 장애 범위가 좁습니다. 주문 API가 없으면 구매는 닫힌 상태로 유지됩니다. 실패해도 잘못 열리지 않는 쪽으로 기울였습니다.</p>
+      </li>
+      <li>
+        <h3>관리자는 한 겹 더 막았습니다</h3>
+        <p>접근 제한 뒤에 두고, 서버에서도 토큰을 다시 검증합니다. 주문 접수를 한 번에 끄는 스위치가 있습니다.</p>
+      </li>
+      <li>
+        <h3>값을 바꾸는 절차를 남겼습니다</h3>
+        <p>저장은 초안이고, 발행해야 사이트에 반영됩니다. 변경 이력이 남고, 두 곳에서 동시에 고치면 한쪽이 덮어쓰지 못하게 버전으로 막습니다.</p>
+      </li>
+      <li>
+        <h3>가격 기준을 한 곳에 뒀습니다</h3>
+        <p>판매 판정, 관리자 입력, 주문 데이터가 같은 하한(원본가 50%)을 씁니다. 인하는 1회 25% 이내입니다. 기준이 화면마다 달라지는 사고를 막기 위해서입니다.</p>
+      </li>
+      <li>
+        <h3>중복 주문을 막았습니다</h3>
+        <p>같은 구매 시도에는 같은 키를 붙이고, 탭이 여러 개여도 등록을 한 번에 하나씩 처리합니다. 결과가 불확실하면 다시 시도하지 않고 확인을 안내합니다.</p>
+      </li>
+      <li>
+        <h3>배포 실수를 먼저 막았습니다</h3>
+        <p>뒤처진 코드나 커밋하지 않은 변경이 있으면 배포가 시작되지 않습니다. 단위·계약 테스트와 화면 E2E 테스트, 운영 문서가 함께 있습니다.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <section class="band" id="works" aria-labelledby="works-h">
   <div class="wrap">
-    <div class="label"><b>02</b><span>공개 사례</span></div>
+    <div class="label"><b>03</b><span>공개 사례</span></div>
     <h2 class="mb3" id="works-h">포트폴리오</h2>
     <ol class="works">
       <li class="work">
@@ -216,7 +279,7 @@
 
 <section class="band alt" id="process" aria-labelledby="process-h">
   <div class="wrap">
-    <div class="label"><b>03</b><span>진행 방식</span></div>
+    <div class="label"><b>04</b><span>진행 방식</span></div>
     <h2 class="mb3" id="process-h">네 단계, 단계마다 문서와 검수</h2>
     <ol class="tl">
       <li><span class="n">01</span><h3>범위와 완료 기준</h3><p>기능별 완료 기준을 착수 전에 문서로 정합니다.</p></li>
@@ -229,7 +292,7 @@
 
 <section class="contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap">
-    <div class="label"><b>04</b><span>문의</span></div>
+    <div class="label"><b>05</b><span>문의</span></div>
     <h2 class="sr" id="contact-h">문의</h2>
     <a class="mail-big" href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com</a>
     <p class="t muted">프로젝트 개요를 메일로 보내 주세요. 100% 원격, 프로젝트 단위 도급으로 진행합니다.</p>

@@ -330,3 +330,29 @@ footer p{margin:0}
 .rows b{font-weight:700}
 .rows span{color:var(--muted)}
 @media (max-width:40rem){.rows li{grid-template-columns:1fr}}
+
+#arch .arch-lead{max-width:36rem;color:var(--muted);margin:1rem 0 0}
+.lanes{display:grid;gap:1.5rem;margin:3rem 0 4rem}
+.lane{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:.75rem 2rem;align-items:center;border-top:2px solid var(--fg);padding-top:1rem}
+.lane h3{font-size:1.125rem}
+.lane h3 small{display:block;font-size:.8125rem;font-weight:600;color:var(--muted);letter-spacing:0;margin-top:.25rem}
+.chain{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.25rem}
+.chain li{position:relative;border:2px solid var(--fg);border-radius:var(--r);padding:.875rem 1rem;background:var(--bg);display:flex;flex-direction:column;gap:.25rem}
+.chain li+li::before{content:"";position:absolute;left:-1.85rem;top:50%;width:1.5rem;border-top:2px solid var(--accent)}
+.chain li+li::after{content:"";position:absolute;left:-.55rem;top:calc(50% - 5px);border:5px solid transparent;border-left:7px solid var(--accent);border-right:0}
+.chain b{font-weight:700;font-size:1rem}
+.chain span{font-size:.875rem;color:var(--muted);line-height:1.5}
+.chain .pend{border-style:dashed;border-color:var(--amber)}
+.chain .pend span{color:var(--amber);font-weight:600}
+.decisions{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem clamp(2rem,4vw,3.5rem);counter-reset:d}
+.decisions li{counter-increment:d;border-top:1px solid var(--line);padding-top:1rem}
+.decisions h3{font-size:1.125rem;margin:0 0 .5rem}
+.decisions h3::before{content:counter(d,decimal-leading-zero);color:var(--accent);font-weight:800;margin-right:.75rem;font-variant-numeric:tabular-nums}
+.decisions p{margin:0;color:var(--muted);font-size:.9375rem;line-height:1.7}
+@media (max-width:52rem){
+  .lane{grid-template-columns:1fr}
+  .chain{grid-template-columns:1fr;gap:1.75rem}
+  .chain li+li::before{left:50%;top:-1.5rem;width:0;height:1.1rem;border-top:0;border-left:2px solid var(--accent)}
+  .chain li+li::after{left:calc(50% - 5px);top:-.5rem;border:5px solid transparent;border-top:7px solid var(--accent);border-bottom:0}
+  .decisions{grid-template-columns:1fr}
+}
