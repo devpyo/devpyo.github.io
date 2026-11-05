@@ -3,25 +3,73 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>devpyo | 쇼핑몰·관리자 시스템 개발 팀</title>
-<meta name="description" content="쇼핑몰과 관리자 시스템을 만드는 개발 팀의 포트폴리오. 운영 중인 쇼핑몰 사례(artdg.com)의 관리자 화면 영상, 구현 범위, 진행 방식을 정리했습니다.">
+<title>devpyo | 커머스·관리자 시스템을 만드는 개발 팀</title>
+<meta name="description" content="커머스·관리자 시스템을 만드는 개발 팀 devpyo의 포트폴리오. 20년차 개발자들이 있는 팀이 하는 일과 공개 사례(artdg.com)를 소개합니다.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!--sprite-->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-done" viewBox="0 0 12 12"><circle cx="6" cy="6" r="6" fill="currentColor"/></symbol>
   <symbol id="i-part" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 1a5 5 0 0 0 0 10z" fill="currentColor"/></symbol>
   <symbol id="i-none" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="m-hi" viewBox="0 0 270 220">
+    
+<path class="s" d="M104 166v20h-14M156 166v20h14"/>
+<rect class="sb" x="50" y="34" width="160" height="132" rx="26"/>
+<path class="sa" d="M50 62v-2a26 26 0 0 1 26-26h108a26 26 0 0 1 26 26v2z"/>
+<rect class="fo" x="68" y="44" width="34" height="8" rx="4"/>
+<ellipse class="fc" cx="82" cy="128" rx="9" ry="6"/><ellipse class="fc" cx="178" cy="128" rx="9" ry="6"/>
+<path class="sc" d="M72 143l8 6-8 6M88 155h14"/>
+
+    <path class="s" d="M50 118q-22 6-22 30"/><circle class="sb" cx="28" cy="154" r="9"/>
+    <path class="s" d="M210 118q26-4 28-34"/><circle class="sb" cx="238" cy="76" r="9"/>
+    <path class="sc" d="M222 50l-6-8M240 44v-10M258 50l6-8"/>
+    <circle class="fi eye" cx="106" cy="98" r="9"/><circle class="fi eye" cx="154" cy="98" r="9"/>
+    <path class="s" d="M116 120q14 14 28 0"/>
+  </symbol>
+  <symbol id="m-work" viewBox="0 0 270 220">
+    
+<path class="s" d="M104 166v20h-14M156 166v20h14"/>
+<rect class="sb" x="50" y="34" width="160" height="132" rx="26"/>
+<path class="sa" d="M50 62v-2a26 26 0 0 1 26-26h108a26 26 0 0 1 26 26v2z"/>
+<rect class="fo" x="68" y="44" width="34" height="8" rx="4"/>
+<ellipse class="fc" cx="82" cy="128" rx="9" ry="6"/><ellipse class="fc" cx="178" cy="128" rx="9" ry="6"/>
+<path class="sc" d="M72 143l8 6-8 6M88 155h14"/>
+
+    <path class="s" d="M50 118q-22 6-22 30"/><circle class="sb" cx="28" cy="154" r="9"/>
+    <path class="s" d="M210 118q22 6 22 30"/><circle class="sb" cx="232" cy="154" r="9"/>
+    <path class="sc" d="M224 38l-12 11 12 11M250 38l12 11-12 11"/>
+    <circle class="fi eye" cx="106" cy="102" r="7"/><circle class="fi eye" cx="154" cy="102" r="7"/>
+    <path class="s" d="M94 88h20M146 88h20M118 126h24"/>
+  </symbol>
+  <symbol id="m-done" viewBox="0 0 270 220">
+    
+<path class="s" d="M104 166v20h-14M156 166v20h14"/>
+<rect class="sb" x="50" y="34" width="160" height="132" rx="26"/>
+<path class="sa" d="M50 62v-2a26 26 0 0 1 26-26h108a26 26 0 0 1 26 26v2z"/>
+<rect class="fo" x="68" y="44" width="34" height="8" rx="4"/>
+<ellipse class="fc" cx="82" cy="128" rx="9" ry="6"/><ellipse class="fc" cx="178" cy="128" rx="9" ry="6"/>
+<path class="sc" d="M72 143l8 6-8 6M88 155h14"/>
+
+    <path class="s" d="M50 118q-22 6-22 30"/><circle class="sb" cx="28" cy="154" r="9"/>
+    <rect class="sb" x="226" y="70" width="16" height="24" rx="8"/>
+    <path class="s" d="M210 120q22 2 24-14"/><circle class="sb" cx="234" cy="102" r="12"/>
+    <path class="sc" d="M12 36l9 9 17-20"/>
+    <path class="s" d="M92 106q14-18 28 0M140 106q14-18 28 0"/>
+    <path class="sk" d="M114 120h32q-2 18-16 18t-16-18z"/>
+  </symbol>
 </svg>
+<!--/sprite-->
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="index.html">devpyo</a>
     <nav aria-label="페이지 이동">
-      <a href="#case">사례</a>
-      <a href="#scope">구현 범위</a>
+      <a href="#skills">역량</a>
+      <a href="#works">포트폴리오</a>
       <a href="#process">진행 방식</a>
     </nav>
     <a class="btn" href="mailto:dev.pyo@gmail.com">메일 문의</a>
@@ -32,175 +80,144 @@
 
 <div class="wrap hero">
   <div>
-    <h1><span>쇼핑몰과 <i class="nb">관리자 시스템을</i></span> <strong>운영 가능한 <i class="nb">상태로 만드는 팀</i></strong></h1>
-    <p class="lead">100% 원격으로, 총액과 산출물을 먼저 정하는 프로젝트 단위 도급으로 일합니다. 공개 사례는 옛 그누보드/영카트 쇼핑몰을 옮겨 다시 만든 artdg.com 1건입니다.</p>
-    <p class="cta">
-      <a class="btn lg" href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com으로 문의</a>
-      <a href="#case">사례 보기 ↓</a>
-    </p>
-    <p class="stat-line">
-      <span class="done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg><span class="muted">artdg.com 운영 중</span></span>
-      <span class="part"><svg class="ic" aria-hidden="true"><use href="#i-part"/></svg><span class="muted">네이버페이 sandbox 검수 중</span></span>
-    </p>
+    <h1><span>커머스·관리자 시스템을</span> <strong>만드는 개발 팀</strong></h1>
+    <p class="yrs"><b>20년차</b> 개발자들이 함께합니다.</p>
+    <p class="lead">쇼핑몰 화면, 관리자, 데이터 이관, 배포까지 다룹니다. 100% 원격, 프로젝트 단위 도급으로 일합니다.</p>
+    <p class="cta"><a class="btn lg" href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com으로 문의</a></p>
   </div>
-  <div class="vis">
-    <div class="frame desk">
-      <div class="bar">artdg.com · 데스크톱</div>
-      <img src="media/artdg-d-home.jpg" width="1600" height="1000" alt="artdg.com 데스크톱 홈 화면. 분류 메뉴와 검색창, 분류 바로가기가 보인다." fetchpriority="high">
-    </div>
-    <div class="frame mob">
-      <div class="bar">모바일</div>
-      <img src="media/artdg-m-home.jpg" width="780" height="1688" alt="artdg.com 휴대폰 홈 화면. 상단에 메뉴 아이콘, 아래에 검색창이 있다.">
-    </div>
-  </div>
+  <svg class="mascot hero-m" role="img" aria-label="devpyo 마스코트. 눈과 웃는 입이 있는 둥근 터미널 창이 한 손을 들어 인사한다." viewBox="0 0 270 220" width="540" height="440"><use href="#m-hi"/></svg>
 </div>
 
-<section class="inv" aria-labelledby="nums-h">
+<section class="band alt" id="skills" aria-labelledby="skills-h">
   <div class="wrap">
-    <h2 class="sr" id="nums-h">공개 사례를 센 숫자</h2>
-    <ul class="nums">
-      <li><b>135<small>개</small></b><span>옛 사이트 DB에서 옮겨 온 상품</span></li>
-      <li><b>37<small>개</small></b><span>상품 분류</span></li>
-      <li><b>52~170<small>ms</small></b><span>상품정보 응답 시간</span></li>
-      <li><b>288<small>개</small></b><span>커밋. 활동일 8일에 걸쳤고 저장소는 비공개입니다</span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="band alt" id="case">
-  <div class="wrap">
-    <div class="head">
+    <div class="cap-head">
       <div>
-        <div class="label"><b>01</b><span>사례</span></div>
-        <h2>공개 사례: artdg.com</h2>
+        <div class="label"><b>01</b><span>역량</span></div>
+        <h2 id="skills-h">팀이 하는 일</h2>
+        <p>20년 경력의 개발자들이 설계부터 배포까지 함께합니다. 아래 근거는 공개 사례 artdg.com 1건에서 가져왔습니다.</p>
       </div>
-      <p>옛 그누보드/영카트 쇼핑몰을 Next.js 정적 사이트로 이관·재구축했습니다. 처음부터 새로 만든 사이트가 아니며, 여러 고객사 납품 실적도 아닙니다. 공개 사례는 이 1건입니다.</p>
+      <svg class="mascot cap-m" aria-hidden="true" focusable="false" viewBox="0 0 270 220" width="216" height="176"><use href="#m-work"/></svg>
     </div>
 
-    <p class="note">
-      <svg class="ic" aria-hidden="true"><use href="#i-part"/></svg>
-      <span><strong>네이버페이: 검수 중</strong>
-      연동 중(sandbox 검수 단계)입니다. 운영 주문 등록은 승인 전까지 닫혀 있고, 실제 결제 완료는 확인하지 않았습니다.</span>
-    </p>
-
-    <figure class="video">
-      <div class="frame">
-        <div class="bar">관리자 둘러보기 · 35초 · 소리 없음</div>
-        <video controls preload="none" playsinline muted width="1280" height="720" poster="media/admin-tour-poster.jpg">
-          <source src="media/admin-tour.mp4" type="video/mp4">
-          영상을 재생할 수 없는 브라우저입니다. 아래 화면 5장으로 같은 내용을 볼 수 있습니다.
-        </video>
-      </div>
-      <figcaption>2026-11-04에 운영 관리자 화면을 직접 열어 녹화했습니다. 클릭은 왼쪽 메뉴 이동뿐이고 값은 바꾸지 않았습니다. 구간: 상품·옵션 목록 → 구매 규칙 → 묶음 할인 → 배송 → 분류.</figcaption>
-    </figure>
-
-    <div class="gal-head">
-      <h3>관리자 화면 5종</h3>
-      <p class="small">2026-11-04에 운영 관리자 화면을 직접 열어 촬영했습니다. 읽기만 했고 값은 바꾸지 않았습니다.</p>
-    </div>
-    <div class="gal" role="group" aria-label="관리자 화면 선택">
-      <input type="radio" name="admin" id="a1" checked aria-label="상품·옵션">
-      <input type="radio" name="admin" id="a2" aria-label="구매 규칙">
-      <input type="radio" name="admin" id="a3" aria-label="묶음 할인">
-      <input type="radio" name="admin" id="a4" aria-label="배송">
-      <input type="radio" name="admin" id="a5" aria-label="분류">
-      <div class="stage">
-        <figure>
-          <div class="frame"><div class="bar">관리자 · 상품·옵션 · 읽기만 함</div><a href="media/admin-products.jpg" target="_blank" rel="noopener"><img src="media/admin-products.jpg" width="1600" height="900" alt="관리자 상품·옵션 화면. 상품명 검색창, 판매 상태별 개수, 상품 목록 표가 보인다." loading="lazy"></a></div>
-          <figcaption>상품·옵션 화면입니다. 상품명이나 id로 검색하고 판매 상태별로 걸러 봅니다.</figcaption>
-        </figure>
-        <figure>
-          <div class="frame"><div class="bar">관리자 · 구매 규칙 · 읽기만 함</div><a href="media/admin-purchase-rules.jpg" target="_blank" rel="noopener"><img src="media/admin-purchase-rules.jpg" width="1600" height="900" alt="관리자 구매 규칙 화면. 기본 최소 수량과 주문 단위, 적용 결과 미리보기 표가 보인다." loading="lazy"></a></div>
-          <figcaption>구매 규칙 화면입니다. 최소 수량과 주문 단위를 정하고 적용 결과를 미리 봅니다.</figcaption>
-        </figure>
-        <figure>
-          <div class="frame"><div class="bar">관리자 · 묶음 할인 · 읽기만 함</div><a href="media/admin-bundle-discount.jpg" target="_blank" rel="noopener"><img src="media/admin-bundle-discount.jpg" width="1600" height="900" alt="관리자 묶음 할인 화면. 묶음 수별 할인율 표와 실제 적용 결과 표가 나란히 있다." loading="lazy"></a></div>
-          <figcaption>묶음 할인 화면입니다. 묶음 수가 많을수록 권당 가격을 더 깎는 단계를 정하고 적용 결과를 옆 표로 봅니다.</figcaption>
-        </figure>
-        <figure>
-          <div class="frame"><div class="bar">관리자 · 배송 · 읽기만 함</div><a href="media/admin-shipping.jpg" target="_blank" rel="noopener"><img src="media/admin-shipping.jpg" width="1600" height="900" alt="관리자 배송 화면. 박스당 배송비와 무료 배송 기준 금액 등을 입력하는 양식이 보인다." loading="lazy"></a></div>
-          <figcaption>배송 화면입니다. 박스당 배송비와 무료 배송 기준 금액 같은 값을 입력하는 양식입니다.</figcaption>
-        </figure>
-        <figure>
-          <div class="frame"><div class="bar">관리자 · 분류 · 읽기만 함</div><a href="media/admin-categories.jpg" target="_blank" rel="noopener"><img src="media/admin-categories.jpg" width="1600" height="900" alt="관리자 분류 화면. 분류 ID, 분류명, 상품 개수, 사이트 표시명, 발행 상태가 표로 보인다." loading="lazy"></a></div>
-          <figcaption>분류 화면입니다. 전체 37개 분류의 상품 수와 사이트 표시명, 발행 상태를 한 표로 봅니다.</figcaption>
-        </figure>
-      </div>
-      <div class="thumbs">
-        <label for="a1"><img src="media/t-admin-products.jpg" width="480" height="270" alt="" loading="lazy"><span>상품·옵션</span></label>
-        <label for="a2"><img src="media/t-admin-purchase-rules.jpg" width="480" height="270" alt="" loading="lazy"><span>구매 규칙</span></label>
-        <label for="a3"><img src="media/t-admin-bundle-discount.jpg" width="480" height="270" alt="" loading="lazy"><span>묶음 할인</span></label>
-        <label for="a4"><img src="media/t-admin-shipping.jpg" width="480" height="270" alt="" loading="lazy"><span>배송</span></label>
-        <label for="a5"><img src="media/t-admin-categories.jpg" width="480" height="270" alt="" loading="lazy"><span>분류</span></label>
-      </div>
-    </div>
-    <p class="small more">관리자 화면 목록은 코드 기준으로 확인한 것이고, 위 영상과 화면 5종 외에는 운영 화면을 직접 눌러 확인한 것이 아닙니다. 화면을 누르면 원본이 새 탭에서 열립니다.</p>
-
-    <ol class="chapters" aria-label="사례 상세">
-      <li><span class="n">1</span><a href="case-artdg.html#ch1">이관과 구조</a><p>상품 135개를 새 구조로 옮겼고, Cloudflare Workers와 D1에서 실행합니다.</p><span class="go" aria-hidden="true">→</span></li>
-      <li><span class="n">2</span><a href="case-artdg.html#ch2">관리자와 안전장치</a><p>값 변경은 초안을 거쳐 발행하고, 가격 인하 한도와 변경 기록이 실수를 막습니다.</p><span class="go" aria-hidden="true">→</span></li>
-      <li><span class="n">3</span><a href="case-artdg.html#ch3">주문과 네이버페이</a><p>연동 중(sandbox 검수 단계)입니다. 취소·반품·교환, 주문 상태 동기화는 아직 없습니다.</p><span class="go" aria-hidden="true">→</span></li>
-      <li><span class="n">4</span><a href="case-artdg.html#ch4">납품 방식</a><p>소스와 디자인의 재사용 권리를 보유합니다. 테스트·배포·관리자 매뉴얼을 함께 인도합니다.</p><span class="go" aria-hidden="true">→</span></li>
+    <ol class="caps">
+      <li class="cap c1">
+        <span class="no">01</span>
+        <h3>커머스 사이트 구축</h3>
+        <p>상품을 찾고, 수량을 계산해 장바구니에 담는 쇼핑몰을 만듭니다.</p>
+        <ol class="flow" aria-label="구매 흐름">
+          <li>카탈로그·검색</li><li>규격·가격 표시</li><li>수량 계산</li><li>장바구니</li>
+        </ol>
+        <p class="ev"><b>근거</b> artdg.com은 상품 135개, 분류 37개를 규격·가격·묶음 단위로 보여 줍니다.</p>
+      </li>
+      <li class="cap c2">
+        <span class="no">02</span>
+        <h3>관리자·백오피스</h3>
+        <p>운영자가 관리자 화면에서 상품과 규칙을 바꾸고 발행하는 구조를 만듭니다.</p>
+        <div class="frame">
+          <div class="bar">관리자 · 구매 규칙 · 읽기만 함</div>
+          <img src="media/admin-purchase-rules.jpg" width="1600" height="900" alt="관리자 구매 규칙 화면. 기본 최소 수량과 주문 단위, 적용 결과 미리보기 표가 보인다." loading="lazy">
+        </div>
+        <p class="ev"><b>근거</b> 상품·옵션, 구매 규칙, 묶음 할인, 배송, 분류를 편집하고 초안을 거쳐 발행합니다. 가격 인하 1회 25% 이내, 변경 감사 기록, 버전 충돌 방지가 있습니다.</p>
+      </li>
+      <li class="cap c3">
+        <span class="no">03</span>
+        <h3>데이터 이관·재구축</h3>
+        <p>옛 사이트의 데이터를 새 구조로 옮기며 다시 만듭니다.</p>
+        <svg class="dg" role="img" aria-label="옛 그누보드/영카트 사이트에서 새 Next.js 정적 사이트로 상품 135개를 옮기는 도식" viewBox="0 0 352 100" width="352" height="100">
+          <rect class="old" x="3" y="20" width="124" height="60" rx="8"/>
+          <text x="65" y="46" text-anchor="middle">옛 사이트</text>
+          <text x="65" y="64" text-anchor="middle">그누보드/영카트</text>
+          <path class="ar" d="M134 54h76m-9-8 9 8-9 8"/>
+          <text class="lb" x="172" y="40" text-anchor="middle">상품 135개</text>
+          <rect class="new" x="219" y="20" width="130" height="60" rx="8"/>
+          <text x="284" y="46" text-anchor="middle">Next.js</text>
+          <text x="284" y="64" text-anchor="middle">정적 사이트</text>
+        </svg>
+        <p class="ev"><b>근거</b> artdg.com은 옛 그누보드/영카트 DB의 상품 135개를 옮겨 다시 만든 사이트입니다. 처음부터 새로 만든 사이트가 아닙니다.</p>
+      </li>
+      <li class="cap c4">
+        <span class="no">04</span>
+        <h3>결제 연동</h3>
+        <p>결제 서비스 연동을 검수 환경까지 진행합니다. 지금은 검수 단계입니다.</p>
+        <ul class="stl">
+          <li class="part"><svg class="ic" aria-hidden="true"><use href="#i-part"/></svg><strong>검수 중</strong><span>네이버페이: 연동 중(sandbox 검수 단계)</span></li>
+          <li class="none"><svg class="ic" aria-hidden="true"><use href="#i-none"/></svg><strong>미구현</strong><span>취소·반품·교환, 주문 상태 동기화</span></li>
+        </ul>
+        <p class="ev"><b>근거</b> 운영 주문 등록은 승인 전까지 닫혀 있고, 실제 결제 완료는 확인하지 않았습니다.</p>
+      </li>
+      <li class="cap c5">
+        <span class="no">05</span>
+        <h3>운영·배포 자동화와 테스트</h3>
+        <p>Cloudflare Workers와 D1 위에서 실행하고, 테스트와 운영 문서를 함께 둡니다.</p>
+        <ul class="ck">
+          <li><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>자동 테스트</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>E2E 테스트</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>배포 가드</li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>운영 문서(RUNBOOK)</li>
+        </ul>
+        <p class="ev"><b>근거</b> artdg.com 저장소에 위 4가지가 있습니다. 저장소는 비공개입니다.</p>
+      </li>
+      <li class="cap c6">
+        <span class="no">06</span>
+        <h3>설계·성능</h3>
+        <p class="big">52~170<small>ms</small></p>
+        <p class="ev"><b>근거</b> artdg.com 상품정보 응답 시간입니다. 값은 스키마 기반으로 편집합니다.</p>
+      </li>
     </ol>
-    <p class="more"><a href="https://artdg.com/" rel="noopener">실서비스 보기: artdg.com</a></p>
   </div>
 </section>
 
-<section class="band" id="scope">
-  <div class="wrap split">
-    <div class="side">
-      <div class="label"><b>02</b><span>구현 범위</span></div>
-      <h2>구현한 것, 검수 중인 것, 만들지 않은 것</h2>
-      <p>공개 사례 artdg.com의 기능별 상태입니다.</p>
-      <div class="legend">
-        <span class="done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg><span class="fg">구현</span><b>7</b></span>
-        <span class="part"><svg class="ic" aria-hidden="true"><use href="#i-part"/></svg><span class="fg">검수 중</span><b>1</b></span>
-        <span class="none"><svg class="ic" aria-hidden="true"><use href="#i-none"/></svg><span class="fg">미구현</span><b>3</b></span>
-      </div>
-    </div>
-    <table>
-      <caption>artdg.com 기능별 구현 상태</caption>
-      <thead>
-        <tr><th scope="col">기능</th><th scope="col">상태</th><th scope="col">비고</th></tr>
-      </thead>
-      <tbody>
-        <tr><th scope="row">상품 카탈로그·검색·분류</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
-        <tr><th scope="row">규격·가격·묶음 단위 표시</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
-        <tr><th scope="row">수량 계산과 장바구니</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
-        <tr><th scope="row">관리자 상품·옵션·가격 관리</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
-        <tr><th scope="row">묶음 할인·배송·구매 규칙 설정</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
-        <tr><th scope="row">변경 이력·감사 기록</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
-        <tr><th scope="row">정적 배포와 자동 테스트</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
-        <tr class="hl"><th scope="row">네이버페이 결제</th><td class="st part"><svg class="ic" aria-hidden="true"><use href="#i-part"/></svg>검수 중</td><td class="nt">sandbox 검수 단계입니다. 운영 주문 등록은 승인 전까지 닫혀 있습니다.</td></tr>
-        <tr><th scope="row">취소·반품·교환·주문 상태 동기화</th><td class="st none"><svg class="ic" aria-hidden="true"><use href="#i-none"/></svg>미구현</td><td class="nt"></td></tr>
-        <tr><th scope="row">회원·로그인</th><td class="st none"><svg class="ic" aria-hidden="true"><use href="#i-none"/></svg>미구현</td><td class="nt"></td></tr>
-        <tr><th scope="row">자체 결제 화면·주문내역</th><td class="st none"><svg class="ic" aria-hidden="true"><use href="#i-none"/></svg>미구현</td><td class="nt"></td></tr>
-      </tbody>
-    </table>
+<section class="band" id="works" aria-labelledby="works-h">
+  <div class="wrap">
+    <div class="label"><b>02</b><span>공개 사례</span></div>
+    <h2 class="mb3" id="works-h">포트폴리오</h2>
+    <ol class="works">
+      <li class="work">
+        <a class="thumb" href="case-artdg.html" tabindex="-1" aria-hidden="true">
+          <div class="frame">
+            <div class="bar">artdg.com · 홈</div>
+            <img src="media/artdg-d-home.jpg" width="1600" height="1000" alt="" loading="lazy">
+          </div>
+        </a>
+        <div class="info">
+          <h3><a href="case-artdg.html">artdg.com</a></h3>
+          <p class="one">종이·미술 재료 쇼핑몰입니다. 옛 그누보드/영카트 사이트를 이관·재구축했습니다.</p>
+          <div class="areas">
+            <span class="k">다룬 영역</span>
+            <ul class="chips">
+              <li>커머스 사이트 구축</li><li>관리자·백오피스</li><li>데이터 이관·재구축</li><li>결제 연동(검수 중)</li><li>운영·배포 자동화와 테스트</li>
+            </ul>
+          </div>
+          <p class="stat-line">
+            <span class="done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현 7</span>
+            <span class="part"><svg class="ic" aria-hidden="true"><use href="#i-part"/></svg>검수 중 1</span>
+            <span class="none"><svg class="ic" aria-hidden="true"><use href="#i-none"/></svg>미구현 3</span>
+          </p>
+          <p class="links"><a href="case-artdg.html">사례 상세 보기 →</a><a href="https://artdg.com/" rel="noopener">실서비스 artdg.com</a></p>
+        </div>
+      </li>
+    </ol>
+    <p class="small">공개 포트폴리오는 현재 이 1건입니다. 여러 고객사 납품 실적이 아닙니다. 상세 화면과 영상은 사례 페이지에 있습니다.</p>
   </div>
 </section>
 
-<section class="band alt" id="process">
+<section class="band alt" id="process" aria-labelledby="process-h">
   <div class="wrap">
     <div class="label"><b>03</b><span>진행 방식</span></div>
-    <h2 class="mb3">네 단계, 단계마다 문서와 검수</h2>
+    <h2 class="mb3" id="process-h">네 단계, 단계마다 문서와 검수</h2>
     <ol class="tl">
-      <li><span class="n">01</span><h3>범위와 완료 기준</h3><p class="m">착수금</p><p>기능별 완료 기준을 착수 전에 문서로 정합니다.</p></li>
-      <li><span class="n">02</span><h3>1~2주 단위 검수</h3><p class="m">중도금</p><p>마일스톤마다 검수 가능한 결과물을 드립니다. 확인한 뒤 다음 단계로 넘어갑니다.</p></li>
-      <li><span class="n">03</span><h3>인수인계</h3><p class="m">잔금</p><p>테스트·배포·관리자 매뉴얼을 함께 인도하고, 소스 인수인계 범위를 계약서에 명시합니다.</p></li>
-      <li><span class="n">04</span><h3>하자보수</h3><p class="m">계약서에 명시</p><p>무상 하자보수 범위를 계약서에 명시합니다. 범위가 바뀌면 일정과 금액을 먼저 합의합니다.</p></li>
+      <li><span class="n">01</span><h3>범위와 완료 기준</h3><p>기능별 완료 기준을 착수 전에 문서로 정합니다.</p></li>
+      <li><span class="n">02</span><h3>1~2주 단위 검수</h3><p>검수 가능한 결과물을 드리고, 확인한 뒤 다음 단계로 넘어갑니다.</p></li>
+      <li><span class="n">03</span><h3>인수인계</h3><p>테스트·배포·관리자 매뉴얼을 인도합니다. 소스 인수인계 범위는 계약서에 명시합니다.</p></li>
+      <li><span class="n">04</span><h3>하자보수</h3><p>무상 하자보수 범위를 계약서에 명시합니다.</p></li>
     </ol>
-    <dl class="terms">
-      <div><dt>계약</dt><dd>프로젝트 단위 도급. 기능별 완료 기준과 총액을 착수 전에 문서로 정합니다.</dd></div>
-      <div><dt>방식</dt><dd>100% 원격. 미팅은 온라인으로만 합니다.</dd></div>
-      <div><dt>인도물</dt><dd>테스트·배포·관리자 매뉴얼. 소스 인수인계 범위는 계약서에 명시합니다.</dd></div>
-    </dl>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap">
     <div class="label"><b>04</b><span>문의</span></div>
+    <h2 class="sr" id="contact-h">문의</h2>
     <a class="mail-big" href="mailto:dev.pyo@gmail.com">dev.pyo@gmail.com</a>
     <p class="t muted">프로젝트 개요를 메일로 보내 주세요. 100% 원격, 프로젝트 단위 도급으로 진행합니다.</p>
   </div>
@@ -209,7 +226,8 @@
 </main>
 
 <footer>
-  <div class="wrap">
+  <div class="wrap foot">
+    <svg class="mascot foot-m" aria-hidden="true" focusable="false" viewBox="0 0 270 220" width="66" height="54"><use href="#m-done"/></svg>
     <p>devpyo · 100% 원격 · 프로젝트 단위 도급 · <a href="privacy/">개인정보 처리방침</a></p>
   </div>
 </footer>

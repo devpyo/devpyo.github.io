@@ -3,18 +3,66 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>사례: artdg.com 이관·재구축 | devpyo</title>
+<title>포트폴리오: artdg.com 이관·재구축 | devpyo</title>
 <meta name="description" content="artdg.com 사례. 옛 그누보드/영카트 쇼핑몰을 Next.js 정적 사이트와 Cloudflare Workers/D1 위의 관리자 구조로 이관·재구축한 범위, 관리자 화면 영상, 아직 없는 기능을 4장으로 나눠 적었습니다.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!--sprite-->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-done" viewBox="0 0 12 12"><circle cx="6" cy="6" r="6" fill="currentColor"/></symbol>
   <symbol id="i-part" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 1a5 5 0 0 0 0 10z" fill="currentColor"/></symbol>
   <symbol id="i-none" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="m-hi" viewBox="0 0 270 220">
+    
+<path class="s" d="M104 166v20h-14M156 166v20h14"/>
+<rect class="sb" x="50" y="34" width="160" height="132" rx="26"/>
+<path class="sa" d="M50 62v-2a26 26 0 0 1 26-26h108a26 26 0 0 1 26 26v2z"/>
+<rect class="fo" x="68" y="44" width="34" height="8" rx="4"/>
+<ellipse class="fc" cx="82" cy="128" rx="9" ry="6"/><ellipse class="fc" cx="178" cy="128" rx="9" ry="6"/>
+<path class="sc" d="M72 143l8 6-8 6M88 155h14"/>
+
+    <path class="s" d="M50 118q-22 6-22 30"/><circle class="sb" cx="28" cy="154" r="9"/>
+    <path class="s" d="M210 118q26-4 28-34"/><circle class="sb" cx="238" cy="76" r="9"/>
+    <path class="sc" d="M222 50l-6-8M240 44v-10M258 50l6-8"/>
+    <circle class="fi eye" cx="106" cy="98" r="9"/><circle class="fi eye" cx="154" cy="98" r="9"/>
+    <path class="s" d="M116 120q14 14 28 0"/>
+  </symbol>
+  <symbol id="m-work" viewBox="0 0 270 220">
+    
+<path class="s" d="M104 166v20h-14M156 166v20h14"/>
+<rect class="sb" x="50" y="34" width="160" height="132" rx="26"/>
+<path class="sa" d="M50 62v-2a26 26 0 0 1 26-26h108a26 26 0 0 1 26 26v2z"/>
+<rect class="fo" x="68" y="44" width="34" height="8" rx="4"/>
+<ellipse class="fc" cx="82" cy="128" rx="9" ry="6"/><ellipse class="fc" cx="178" cy="128" rx="9" ry="6"/>
+<path class="sc" d="M72 143l8 6-8 6M88 155h14"/>
+
+    <path class="s" d="M50 118q-22 6-22 30"/><circle class="sb" cx="28" cy="154" r="9"/>
+    <path class="s" d="M210 118q22 6 22 30"/><circle class="sb" cx="232" cy="154" r="9"/>
+    <path class="sc" d="M224 38l-12 11 12 11M250 38l12 11-12 11"/>
+    <circle class="fi eye" cx="106" cy="102" r="7"/><circle class="fi eye" cx="154" cy="102" r="7"/>
+    <path class="s" d="M94 88h20M146 88h20M118 126h24"/>
+  </symbol>
+  <symbol id="m-done" viewBox="0 0 270 220">
+    
+<path class="s" d="M104 166v20h-14M156 166v20h14"/>
+<rect class="sb" x="50" y="34" width="160" height="132" rx="26"/>
+<path class="sa" d="M50 62v-2a26 26 0 0 1 26-26h108a26 26 0 0 1 26 26v2z"/>
+<rect class="fo" x="68" y="44" width="34" height="8" rx="4"/>
+<ellipse class="fc" cx="82" cy="128" rx="9" ry="6"/><ellipse class="fc" cx="178" cy="128" rx="9" ry="6"/>
+<path class="sc" d="M72 143l8 6-8 6M88 155h14"/>
+
+    <path class="s" d="M50 118q-22 6-22 30"/><circle class="sb" cx="28" cy="154" r="9"/>
+    <rect class="sb" x="226" y="70" width="16" height="24" rx="8"/>
+    <path class="s" d="M210 120q22 2 24-14"/><circle class="sb" cx="234" cy="102" r="12"/>
+    <path class="sc" d="M12 36l9 9 17-20"/>
+    <path class="s" d="M92 106q14-18 28 0M140 106q14-18 28 0"/>
+    <path class="sk" d="M114 120h32q-2 18-16 18t-16-18z"/>
+  </symbol>
 </svg>
+<!--/sprite-->
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="top">
   <div class="wrap">
@@ -24,6 +72,7 @@
       <a href="#ch2">관리자</a>
       <a href="#ch3">주문</a>
       <a href="#ch4">납품</a>
+      <a href="#state">구현 상태</a>
     </nav>
     <a class="btn" href="mailto:dev.pyo@gmail.com">메일 문의</a>
   </div>
@@ -32,14 +81,25 @@
 <main id="main">
 
 <div class="wrap page-head">
-  <p class="crumb"><a href="index.html">← 처음으로</a></p>
-  <h1>사례: artdg.com <span class="nb">이관·재구축</span></h1>
+  <div class="ph">
+  <div>
+  <p class="crumb"><a href="index.html#works">← 포트폴리오로</a></p>
+  <h1>artdg.com <span class="nb">이관·재구축</span></h1>
   <p class="lead">운영 중인 종이·미술 재료 쇼핑몰입니다. 옛 그누보드/영카트 사이트를 Next.js 정적 사이트로 옮기고, 관리자에서 값을 바꿔 발행하는 구조로 다시 만들었습니다.</p>
   <p class="note">
     <svg class="ic" aria-hidden="true"><use href="#i-part"/></svg>
     <span><strong>네이버페이: 검수 중</strong>
     연동 중(sandbox 검수 단계)입니다. 운영 주문 등록은 승인 전까지 닫혀 있습니다.</span>
   </p>
+  <div class="areas">
+    <span class="k">다룬 영역</span>
+    <ul class="chips">
+      <li>커머스 사이트 구축</li><li>관리자·백오피스</li><li>데이터 이관·재구축</li><li>결제 연동(검수 중)</li><li>운영·배포 자동화와 테스트</li>
+    </ul>
+  </div>
+  </div>
+  <svg class="mascot ph-m" role="img" aria-label="devpyo 마스코트. 눈과 웃는 입이 있는 둥근 터미널 창이 엄지를 들어 올린다." viewBox="0 0 270 220" width="324" height="264"><use href="#m-done"/></svg>
+  </div>
   <dl class="facts">
     <div><dt>성격</dt><dd>이관·재구축. 처음부터 만든 사이트가 아닙니다.</dd></div>
     <div><dt>공개 사례</dt><dd>이 1건입니다. 여러 고객사 납품 실적이 아닙니다.</dd></div>
@@ -114,7 +174,7 @@
     <div class="split">
       <div class="side">
         <div class="label"><b>02</b><span>관리자와 안전장치</span></div>
-        <h2>코드를 고치지 않고 관리자에서 바꿉니다</h2>
+        <h2>운영자가 관리자에서 값을 바꿉니다</h2>
         <p>운영자는 관리자에서 값을 바꿉니다. 설정 변경은 초안을 거쳐 발행해야 사용자 화면에 반영되고, 발행 이력이 남습니다.</p>
       </div>
       <div>
@@ -233,8 +293,44 @@
         </ul>
         <h3 class="sub">공개하지 않는 것</h3>
         <p class="t">저장소는 비공개입니다. 이 페이지에는 커밋 수, 활동일, 구조 요약과 화면 캡처만 실었고 코드, 주문·운영 데이터는 싣지 않았습니다. 화면은 주문자 정보가 없는 것만 골랐습니다.</p>
-        <p><a href="index.html#scope">구현 범위 보기</a> · <a href="index.html#process">진행 방식 보기</a></p>
+        <p><a href="#state">구현 상태 보기</a> · <a href="index.html#process">진행 방식 보기</a></p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="ch" id="state">
+  <div class="wrap">
+    <div class="split">
+      <div class="side">
+        <div class="label"><b>05</b><span>구현 상태</span></div>
+        <h2>포트폴리오 artdg의 구현 상태</h2>
+        <p>구현한 것, 검수 중인 것, 만들지 않은 것을 기능별로 적었습니다.</p>
+        <div class="legend">
+          <span class="done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg><span class="fg">구현</span><b>7</b></span>
+          <span class="part"><svg class="ic" aria-hidden="true"><use href="#i-part"/></svg><span class="fg">검수 중</span><b>1</b></span>
+          <span class="none"><svg class="ic" aria-hidden="true"><use href="#i-none"/></svg><span class="fg">미구현</span><b>3</b></span>
+        </div>
+      </div>
+      <table>
+      <caption>artdg.com 기능별 구현 상태</caption>
+      <thead>
+        <tr><th scope="col">기능</th><th scope="col">상태</th><th scope="col">비고</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">상품 카탈로그·검색·분류</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
+        <tr><th scope="row">규격·가격·묶음 단위 표시</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
+        <tr><th scope="row">수량 계산과 장바구니</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
+        <tr><th scope="row">관리자 상품·옵션·가격 관리</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
+        <tr><th scope="row">묶음 할인·배송·구매 규칙 설정</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
+        <tr><th scope="row">변경 이력·감사 기록</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
+        <tr><th scope="row">정적 배포와 자동 테스트</th><td class="st done"><svg class="ic" aria-hidden="true"><use href="#i-done"/></svg>구현</td><td class="nt"></td></tr>
+        <tr class="hl"><th scope="row">네이버페이 결제</th><td class="st part"><svg class="ic" aria-hidden="true"><use href="#i-part"/></svg>검수 중</td><td class="nt">sandbox 검수 단계입니다. 운영 주문 등록은 승인 전까지 닫혀 있습니다.</td></tr>
+        <tr><th scope="row">취소·반품·교환·주문 상태 동기화</th><td class="st none"><svg class="ic" aria-hidden="true"><use href="#i-none"/></svg>미구현</td><td class="nt"></td></tr>
+        <tr><th scope="row">회원·로그인</th><td class="st none"><svg class="ic" aria-hidden="true"><use href="#i-none"/></svg>미구현</td><td class="nt"></td></tr>
+        <tr><th scope="row">자체 결제 화면·주문내역</th><td class="st none"><svg class="ic" aria-hidden="true"><use href="#i-none"/></svg>미구현</td><td class="nt"></td></tr>
+      </tbody>
+    </table>
     </div>
   </div>
 </section>
@@ -250,7 +346,8 @@
 </main>
 
 <footer>
-  <div class="wrap">
+  <div class="wrap foot">
+    <svg class="mascot foot-m" aria-hidden="true" focusable="false" viewBox="0 0 270 220" width="66" height="54"><use href="#m-done"/></svg>
     <p>devpyo · 100% 원격 · 프로젝트 단위 도급 · <a href="privacy/">개인정보 처리방침</a></p>
   </div>
 </footer>
