@@ -374,3 +374,6 @@ footer p{margin:0}
   .chain.c4 li+li::before{left:50%;top:-1.35rem;width:0;height:1rem;border-top:0;border-left:2px solid var(--accent)}
   .chain.c4 li+li::after{left:calc(50% - 5px);top:-.45rem;border:5px solid transparent;border-top:7px solid var(--accent);border-bottom:0}
 }
+
+.rows small{display:block;margin-top:.375rem;color:var(--accent);font-weight:700;font-size:.8125rem}
+.exp2{margin-top:3rem}
